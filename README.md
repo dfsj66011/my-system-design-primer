@@ -1,1219 +1,1143 @@
-*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
-
-**Help [translate](TRANSLATIONS.md) this guide!**
-
-# The System Design Primer
+# 系统设计入门
 
 <p align="center">
   <img src="images/jj3A5N8.png">
   <br/>
 </p>
 
-## Motivation
+## 目的
 
-> Learn how to design large-scale systems.
+> 学习如何设计大型系统。
 >
-> Prep for the system design interview.
+> 为系统设计的面试做准备。
 
-### Learn how to design large-scale systems
+### 为系统设计的面试做准备
 
-Learning how to design scalable systems will help you become a better engineer.
+在很多科技公司中，除了代码面试，系统设计也是**技术面试过程**中的一个**必要环节**。
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+**实践常见的系统设计面试题**并且把你的答案和**例子的解答**进行**对照**：讨论，代码和图表。
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+面试准备的其他主题：
 
-### Learn from the open source community
+* [学习指引](#学习指引)
+* [如何处理一个系统设计的面试题](#如何处理一个系统设计的面试题)
+* [系统设计的面试题，**含解答**](#系统设计的面试题和解答)
+* [面向对象设计的面试题，**含解答**](#面向对象设计的面试问题及解答)
+* [其它的系统设计面试题](#其它的系统设计面试题)
 
-This is a continually updated, open source project.
+### 代码资源：互动式编程挑战
 
-[Contributions](#contributing) are welcome!
-
-### Prep for the system design interview
-
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
-
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
-
-Additional topics for interview prep:
-
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
-
-## Anki flashcards
-
-<p align="center">
-  <img src="images/zdCAkB3.png">
-  <br/>
-</p>
-
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
-
-* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
-
-Great for use while on-the-go.
-
-### Coding Resource: Interactive Coding Challenges
-
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+你正在寻找资源以准备[**编程面试**](https://github.com/donnemartin/interactive-coding-challenges)吗？
 
 <p align="center">
   <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+请查看我们的姐妹仓库[**互动式编程挑战**](https://github.com/donnemartin/interactive-coding-challenges)，其中包含了一个额外的抽认卡堆：
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [代码卡堆](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+## 贡献
 
-> Learn from the community.
+> 从社区中学习。
 
-Feel free to submit pull requests to help:
+欢迎提交 PR 提供帮助：
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+* 修复错误
+* 完善章节
+* 添加章节
+* [帮助翻译](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+一些还需要完善的内容放在了[正在完善中](#正在完善中)。
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+请查看[贡献指南](CONTRIBUTING.md)。
 
-## Index of system design topics
+## 系统设计主题的索引
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+> 各种系统设计主题的摘要，包括优点和缺点。**每一个主题都面临着取舍和权衡**。
 >
-> Each section contains links to more in-depth resources.
+> 每个章节都包含着更多的资源的链接。
+
 
 <p align="center">
   <img src="images/jrUBAF7.png">
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
-    * [Fail-over](#fail-over)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
-* [Domain name system](#domain-name-system)
-* [Content delivery network](#content-delivery-network)
-    * [Push CDNs](#push-cdns)
-    * [Pull CDNs](#pull-cdns)
-* [Load balancer](#load-balancer)
-    * [Active-passive](#active-passive)
-    * [Active-active](#active-active)
-    * [Layer 4 load balancing](#layer-4-load-balancing)
-    * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
-    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
-    * [Microservices](#microservices)
-    * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
-        * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
+* [系统设计主题：从这里开始](#系统设计主题从这里开始)
+    * [第一步：回顾可扩展性的视频讲座](#第一步回顾可扩展性scalability的视频讲座)
+    * [第二步：回顾可扩展性的文章](#第二步回顾可扩展性文章)
+    * [接下来的步骤](#接下来的步骤)
+* [性能与拓展性](#性能与可扩展性)
+* [延迟与吞吐量](#延迟与吞吐量)
+* [可用性与一致性](#可用性与一致性)
+    * [CAP 理论](#cap-理论)
+        * [CP - 一致性和分区容错性](#cp--一致性和分区容错性)
+        * [AP - 可用性和分区容错性](#ap--可用性与分区容错性)
+* [一致模式](#一致性模式)
+    * [弱一致性](#弱一致性)
+    * [最终一致性](#最终一致性)
+    * [强一致性](#强一致性)
+* [可用模式](#可用性模式)
+    * [故障切换](#故障切换)
+    * [复制](#复制)
+* [域名系统](#域名系统)
+* [CDN](#内容分发网络cdn)
+    * [CDN 推送](#cdn-推送push)
+    * [CDN 拉取](#cdn-拉取pull)
+* [负载均衡器](#负载均衡器)
+    * [工作到备用切换（Active-passive）](#工作到备用切换active-passive)
+    * [双工作切换（Active-active）](#双工作切换active-active)
+    * [四层负载均衡](#四层负载均衡)
+    * [七层负载均衡](#七层负载均衡器)
+    * [水平扩展](#水平扩展)
+* [反向代理（web 服务器）](#反向代理web-服务器)
+    * [负载均衡与反向代理](#负载均衡器与反向代理)
+* [应用层](#应用层)
+    * [微服务](#微服务)
+    * [服务发现](#服务发现)
+* [数据库](#数据库)
+    * [关系型数据库管理系统（RDBMS）](#关系型数据库管理系统rdbms)
+        * [Master-slave 复制集](#主从复制)
+        * [Master-master 复制集](#主主复制)
+        * [联合](#联合)
+        * [分片](#分片)
+        * [非规范化](#非规范化)
+        * [SQL 调优](#sql-调优)
     * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
-* [Cache](#cache)
-    * [Client caching](#client-caching)
-    * [CDN caching](#cdn-caching)
-    * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
-        * [Cache-aside](#cache-aside)
-        * [Write-through](#write-through)
-        * [Write-behind (write-back)](#write-behind-write-back)
-        * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
-    * [Back pressure](#back-pressure)
-* [Communication](#communication)
-    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
-    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
-    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
-    * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
-* [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+        * [Key-value 存储](#键-值存储)
+        * [文档存储](#文档类型存储)
+        * [宽列存储](#列型存储)
+        * [图数据库](#图数据库)
+    * [SQL 还是 NoSQL](#sql-还是-nosql)
+* [缓存](#缓存)
+    * [客户端缓存](#客户端缓存)
+    * [CDN 缓存](#cdn-缓存)
+    * [Web 服务器缓存](#web-服务器缓存)
+    * [数据库缓存](#数据库缓存)
+    * [应用缓存](#应用缓存)
+    * [数据库查询级别的缓存](#数据库查询级别的缓存)
+    * [对象级别的缓存](#对象级别的缓存)
+    * [何时更新缓存](#何时更新缓存)
+        * [缓存模式](#缓存模式)
+        * [直写模式](#直写模式)
+        * [回写模式](#回写模式)
+        * [刷新](#刷新)
+* [异步](#异步)
+    * [消息队列](#消息队列)
+    * [任务队列](#任务队列)
+    * [背压机制](#背压)
+* [通讯](#通讯)
+    * [传输控制协议（TCP）](#传输控制协议tcp)
+    * [用户数据报协议（UDP）](#用户数据报协议udp)
+    * [远程控制调用协议（RPC）](#远程过程调用协议rpc)
+    * [表述性状态转移（REST）](#表述性状态转移rest)
+* [安全](#安全)
+* [附录](#附录)
+    * [2 的次方表](#2-的次方表)
+    * [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
+    * [其它的系统设计面试题](#其它的系统设计面试题)
+    * [真实架构](#真实架构)
+    * [公司的系统架构](#公司的系统架构)
+    * [公司工程博客](#公司工程博客)
+* [正在完善中](#正在完善中)
+* [致谢](#致谢)
+* [联系方式](#联系方式)
+* [许可](#许可)
 
-## Study guide
+## 学习指引
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> 基于你面试的时间线（短、中、长）去复习那些推荐的主题。
 
 ![Imgur](images/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**问：对于面试来说，我需要知道这里的所有知识点吗？**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**答：不，如果只是为了准备面试的话，你并不需要知道所有的知识点。**
 
-What you are asked in an interview depends on variables such as:
+在一场面试中你会被问到什么取决于下面这些因素：
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* 你的经验
+* 你的技术背景
+* 你面试的职位
+* 你面试的公司
+* 运气
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+那些有经验的候选人通常会被期望了解更多的系统设计的知识。架构师或者团队负责人则会被期望了解更多除了个人贡献之外的知识。顶级的科技公司通常也会有一次或者更多的系统设计面试。
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+面试会很宽泛的展开并在几个领域深入。这会帮助你了解一些关于系统设计的不同的主题。基于你的时间线，经验，面试的职位和面试的公司对下面的指导做出适当的调整。
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* **短期** - 以系统设计主题的**广度**为目标。通过解决**一些**面试题来练习。
+* **中期** - 以系统设计主题的**广度**和**初级深度**为目标。通过解决**很多**面试题来练习。
+* **长期** - 以系统设计主题的**广度**和**高级深度**为目标。通过解决**大部分**面试题来练习。
 
-| | Short | Medium | Long |
-|---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+|                                          | 短期   | 中期   | 长期   |
+| ---------------------------------------- | ---- | ---- | ---- |
+| 阅读 [系统设计主题](#系统设计主题的索引) 以获得一个关于系统如何工作的宽泛的认识 | :+1: | :+1: | :+1: |
+| 阅读一些你要面试的[公司工程博客](#公司工程博客)的文章            | :+1: | :+1: | :+1: |
+| 阅读 [真实架构](#真实架构)                   | :+1: | :+1: | :+1: |
+| 复习 [如何处理一个系统设计面试题](#如何处理一个系统设计面试题)       | :+1: | :+1: | :+1: |
+| 完成 [系统设计的面试题和解答](#系统设计的面试题和解答)             | 一些   | 很多   | 大部分  |
+| 完成 [面向对象设计的面试题和解答](#面向对象设计的面试问题及解答)        | 一些   | 很多   | 大部分  |
+| 复习 [其它的系统设计面试题](#其它的系统设计面试题)          | 一些   | 很多   | 大部分  |
 
-## How to approach a system design interview question
+## 如何处理一个系统设计的面试题
 
-> How to tackle a system design interview question.
+系统设计面试是一个**开放式的对话**。他们期望你去主导这个对话。
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成[系统设计的面试题和解答](#系统设计的面试题和解答)这个章节。
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+### 第一步：描述使用场景，约束和假设
 
-### Step 1: Outline use cases, constraints, and assumptions
+把所有需要的东西聚集在一起，审视问题。不停的提问，以至于我们可以明确使用场景和约束。讨论假设。
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+* 谁会使用它？
+* 他们会怎样使用它？
+* 有多少用户？
+* 系统的作用是什么？
+* 系统的输入输出分别是什么？
+* 我们希望处理多少数据？
+* 我们希望每秒钟处理多少请求？
+* 我们希望的读写比率？
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+### 第二步：创造一个高层级的设计
 
-### Step 2: Create a high level design
+使用所有重要的组件来描绘出一个高层级的设计。
 
-Outline a high level design with all important components.
+* 画出主要的组件和连接
+* 证明你的想法
 
-* Sketch the main components and connections
-* Justify your ideas
+### 第三步：设计核心组件
 
-### Step 3: Design core components
+对每一个核心组件进行详细深入的分析。举例来说，如果你被问到[设计一个 url 缩写服务](solutions/system_design/pastebin/README.md)，开始讨论：
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+* 生成并储存一个完整 url 的 hash
+    * [MD5](solutions/system_design/pastebin/README.md) 和 [Base62](solutions/system_design/pastebin/README.md)
+    * Hash 碰撞
+    * SQL 还是 NoSQL
+    * 数据库模型
+* 将一个 hashed url 翻译成完整的 url
+    * 数据库查找
+* API 和面向对象设计
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+### 第四步：扩展设计
 
-### Step 4: Scale the design
+确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成扩展性的议题吗？
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+* 负载均衡
+* 水平扩展
+* 缓存
+* 数据库分片
 
-* Load balancer
-* Horizontal scaling
-* Caching
-* Database sharding
+论述可能的解决办法和代价。每件事情需要取舍。可以使用[可扩展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+### 预估计算量
 
-### Back-of-the-envelope calculations
+你或许会被要求通过手算进行一些估算。[附录](#附录)涉及到的是下面的这些资源：
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+* [使用预估计算量](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [2 的次方表](#2-的次方表)
+* [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
 
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+### 相关资源和延伸阅读
 
-### Source(s) and further reading
+查看下面的链接以获得我们期望的更好的想法：
 
-Check out the following links to get a better idea of what to expect:
+* [怎样通过一个系统设计的面试](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [系统设计的面试](http://www.hiredintech.com/system-design)
+* [系统架构与设计的面试简介](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
-* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [The system design interview](http://www.hiredintech.com/system-design)
-* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
-* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+## 系统设计的面试题和解答
 
-## System design interview questions with solutions
-
-> Common system design interview questions with sample discussions, code, and diagrams.
+> 普通的系统设计面试题和相关事例的论述，代码和图表。
 >
-> Solutions linked to content in the `solutions/` folder.
 
-| Question | |
-|---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+> 与内容有关的解答在 `solutions/` 文件夹中。
 
-### Design Pastebin.com (or Bit.ly)
+| 问题                                       |                                          |
+| ---------------------------------------- | ---------------------------------------- |
+| 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README-zh-Hans.md) |
+| 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索) | [解答](solutions/system_design/twitter/README.md) |
+| 设计一个网页爬虫                                 | [解答](solutions/system_design/web_crawler/README.md) |
+| 设计 Mint.com                              | [解答](solutions/system_design/mint/README.md) |
+| 为一个社交网络设计数据结构                            | [解答](solutions/system_design/social_graph/README.md) |
+| 为搜索引擎设计一个 key-value 储存                   | [解答](solutions/system_design/query_cache/README.md) |
+| 通过分类特性设计 Amazon 的销售排名                    | [解答](solutions/system_design/sales_rank/README.md) |
+| 在 AWS 上设计一个百万用户级别的系统                     | [解答](solutions/system_design/scaling_aws/README.md) |
+| 添加一个系统设计问题                               | [贡献](#贡献)                                |
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+### 设计 Pastebin.com (或者 Bit.ly)
+
+[查看实践与解答](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[查看实践与解答](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
-### Design a web crawler
+### 设计一个网页爬虫
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[查看实践与解答](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](images/bWxPtQA.png)
 
-### Design Mint.com
+### 设计 Mint.com
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[查看实践与解答](solutions/system_design/mint/README.md)
 
 ![Imgur](images/V5q57vU.png)
 
-### Design the data structures for a social network
+### 为一个社交网络设计数据结构
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[查看实践与解答](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### 为搜索引擎设计一个 key-value 储存
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[查看实践与解答](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### 设计按类别分类的 Amazon 销售排名
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[查看实践与解答](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](images/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### 在 AWS 上设计一个百万用户级别的系统
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[查看实践与解答](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## 面向对象设计的面试问题及解答
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> 常见面向对象设计面试问题及实例讨论，代码和图表演示。
 >
-> Solutions linked to content in the `solutions/` folder.
+> 与内容相关的解决方案在 `solutions/` 文件夹中。
 
->**Note: This section is under development**
+>**注：此节还在完善中**
 
-| Question | |
-|---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| 问题           |                                          |
+| ------------ | ---------------------------------------- |
+| 设计 hash map  | [解决方案](solutions/object_oriented_design/hash_table/hash_map.ipynb) |
+| 设计 LRU 缓存    | [解决方案](solutions/object_oriented_design/lru_cache/lru_cache.ipynb) |
+| 设计一个呼叫中心     | [解决方案](solutions/object_oriented_design/call_center/call_center.ipynb) |
+| 设计一副牌        | [解决方案](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb) |
+| 设计一个停车场      | [解决方案](solutions/object_oriented_design/parking_lot/parking_lot.ipynb) |
+| 设计一个聊天服务     | [解决方案](solutions/object_oriented_design/online_chat/online_chat.ipynb) |
+| 设计一个环形数组     | [待解决](#贡献)                     |
+| 添加一个面向对象设计问题 | [待解决](#贡献)                     |
 
-## System design topics: start here
+## 系统设计主题：从这里开始
 
-New to system design?
+不熟悉系统设计？
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+首先，你需要对一般性原则有一个基本的认识，知道它们是什么，怎样使用以及利弊。
 
-### Step 1: Review the scalability video lecture
+### 第一步：回顾可扩展性（scalability）的视频讲座
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[哈佛大学可扩展性讲座](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+* 主题涵盖
+    * 垂直扩展（Vertical scaling）
+    * 水平扩展（Horizontal scaling）
+    * 缓存
+    * 负载均衡
+    * 数据库复制
+    * 数据库分区
 
-### Step 2: Review the scalability article
+### 第二步：回顾可扩展性文章
 
-[Scalability](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
+[可扩展性](http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
-    * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+* 主题涵盖：
+    * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [数据库](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [缓存](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [异步](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### 接下来的步骤
 
-Next, we'll look at high-level trade-offs:
+接下来，我们将看看高阶的权衡和取舍:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **性能**与**可扩展性**
+* **延迟**与**吞吐量**
+* **可用性**与**一致性**
 
-Keep in mind that **everything is a trade-off**.
+记住**每个方面都面临取舍和权衡**。
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+然后，我们将深入更具体的主题，如 DNS、CDN 和负载均衡器。
 
-## Performance vs scalability
+## 性能与可扩展性
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+如果服务**性能**的增长与资源的增加是成比例的，服务就是可扩展的。通常，提高性能意味着服务于更多的工作单元，另一方面，当数据集增长时，同样也可以处理更大的工作单位。<sup><a href="http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html">1</a></sup>
 
-Another way to look at performance vs scalability:
+另一个角度来看待性能与可扩展性:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* 如果你的系统有**性能**问题，对于单个用户来说是缓慢的。
+* 如果你的系统有**可扩展性**问题，单个用户较快但在高负载下会变慢。
 
-### Source(s) and further reading
+### 来源及延伸阅读
 
-* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [简单谈谈可扩展性](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [可扩展性，可用性，稳定性和模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
-## Latency vs throughput
+## 延迟与吞吐量
 
-**Latency** is the time to perform some action or to produce some result.
+**延迟**是执行操作或运算结果所花费的时间。
 
-**Throughput** is the number of such actions or results per unit of time.
+**吞吐量**是单位时间内（执行）此类操作或运算的数量。
 
-Generally, you should aim for **maximal throughput** with **acceptable latency**.
+通常，你应该以**可接受级延迟**下**最大化吞吐量**为目标。
 
-### Source(s) and further reading
+### 来源及延伸阅读
 
-* [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
+* [理解延迟与吞吐量](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
-## Availability vs consistency
+## 可用性与一致性
 
-### CAP theorem
+### CAP 理论
 
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <strong><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
 </p>
 
-In a distributed computer system, you can only support two of the following guarantees:
+在一个分布式计算系统中，只能同时满足下列的两点:
 
-* **Consistency** - Every read receives the most recent write or an error
-* **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+* **一致性** ─ 每次访问都能获得最新数据但可能会收到错误响应
+* **可用性** ─ 每次访问都能收到非错响应，但不保证获取到最新数据
+* **分区容错性** ─ 在任意分区网络故障的情况下系统仍能继续运行
 
-*Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
+**网络并不可靠，所以你应要支持分区容错性，并需要在软件可用性和一致性间做出取舍。**
 
-#### CP - consistency and partition tolerance
+#### CP ─ 一致性和分区容错性
 
-Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
+等待分区节点的响应可能会导致延时错误。如果你的业务需求需要原子读写，CP 是一个不错的选择。
 
-#### AP - availability and partition tolerance
+#### AP ─ 可用性与分区容错性
 
-Responses return the most readily available version of the data available on any node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+响应节点上可用数据的最近版本可能并不是最新的。当分区解析完后，写入（操作）可能需要一些时间来传播。
 
-AP is a good choice if the business needs to allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+如果业务需求允许[最终一致性](#最终一致性)，或当有外部故障时要求系统继续运行，AP 是一个不错的选择。
 
-### Source(s) and further reading
+### 来源及延伸阅读
 
-* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
+* [再看 CAP 理论](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
-* [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
-## Consistency patterns
+## 一致性模式
 
-With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
+有同一份数据的多份副本，我们面临着怎样同步它们的选择，以便让客户端有一致的显示数据。回想 [CAP 理论](#cap-理论)中的一致性定义 ─ 每次访问都能获得最新数据但可能会收到错误响应
 
-### Weak consistency
 
-After a write, reads may or may not see it.  A best effort approach is taken.
+### 弱一致性
 
-This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
+在写入之后，访问可能看到，也可能看不到（写入数据）。尽力优化之让其能访问最新数据。
 
-### Eventual consistency
+这种方式可以 memcached 等系统中看到。弱一致性在 VoIP，视频聊天和实时多人游戏等真实用例中表现不错。打个比方，如果你在通话中丢失信号几秒钟时间，当重新连接时你是听不到这几秒钟所说的话的。
 
-After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.
+### 最终一致性
 
-This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.
+在写入后，访问最终能看到写入数据（通常在数毫秒内）。数据被异步复制。
 
-### Strong consistency
+DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性系统中效果不错。
 
-After a write, reads will see it.  Data is replicated synchronously.
+### 强一致性
 
-This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
+在写入后，访问立即可见。数据被同步复制。
 
-### Source(s) and further reading
+文件系统和关系型数据库（RDBMS）中使用的是此种方式。强一致性在需要记录的系统中运作良好。
+
+### 来源及延伸阅读
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 
-## Availability patterns
+## 可用性模式
 
-There are two complementary patterns to support high availability: **fail-over** and **replication**.
+有两种支持高可用性的模式: **故障切换（fail-over）**和**复制（replication）**。
 
-### Fail-over
+### 故障切换
 
-#### Active-passive
+#### 工作到备用切换（Active-passive）
 
-With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
+关于工作到备用的故障切换流程是，工作服务器发送周期信号给待机中的备用服务器。如果周期信号中断，备用服务器切换成工作服务器的 IP 地址并恢复服务。
 
-The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
+宕机时间取决于备用服务器处于“热”待机状态还是需要从“冷”待机状态进行启动。只有工作服务器处理流量。
 
-Active-passive failover can also be referred to as master-slave failover.
+工作到备用的故障切换也被称为主从切换。
 
-#### Active-active
+#### 双工作切换（Active-active）
 
-In active-active, both servers are managing traffic, spreading the load between them.
+在双工作切换中，双方都在管控流量，在它们之间分散负载。
 
-If the servers are public-facing, the DNS would need to know about the public IPs of both servers.  If the servers are internal-facing, application logic would need to know about both servers.
+如果是外网服务器，DNS 将需要对两方都了解。如果是内网服务器，应用程序逻辑将需要对两方都了解。
 
-Active-active failover can also be referred to as master-master failover.
+双工作切换也可以称为主主切换。
 
-### Disadvantage(s): failover
+### 缺陷：故障切换
 
-* Fail-over adds more hardware and additional complexity.
-* There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
+* 故障切换需要添加额外硬件并增加复杂性。
+* 如果新写入数据在能被复制到备用系统之前，工作系统出现了故障，则有可能会丢失数据。
 
-### Replication
+### 复制
 
-#### Master-slave and master-master
+#### 主─从复制和主─主复制
 
-This topic is further discussed in the [Database](#database) section:
+这个主题进一步探讨了[数据库](#数据库)部分:
 
-* [Master-slave replication](#master-slave-replication)
-* [Master-master replication](#master-master-replication)
+* [主─从复制](#主从复制)
+* [主─主复制](#主主复制)
 
-### Availability in numbers
-
-Availability is often quantified by uptime (or downtime) as a percentage of time the service is available.  Availability is generally measured in number of 9s--a service with 99.99% availability is described as having four 9s.
-
-#### 99.9% availability - three 9s
-
-| Duration            | Acceptable downtime|
-|---------------------|--------------------|
-| Downtime per year   | 8h 45min 57s       |
-| Downtime per month  | 43m 49.7s          |
-| Downtime per week   | 10m 4.8s           |
-| Downtime per day    | 1m 26.4s           |
-
-#### 99.99% availability - four 9s
-
-| Duration            | Acceptable downtime|
-|---------------------|--------------------|
-| Downtime per year   | 52min 35.7s        |
-| Downtime per month  | 4m 23s             |
-| Downtime per week   | 1m 5s              |
-| Downtime per day    | 8.6s               |
-
-#### Availability in parallel vs in sequence
-
-If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
-
-###### In sequence
-
-Overall availability decreases when two components with availability < 100% are in sequence:
-
-```
-Availability (Total) = Availability (Foo) * Availability (Bar)
-```
-
-If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
-
-###### In parallel
-
-Overall availability increases when two components with availability < 100% are in parallel:
-
-```
-Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
-```
-
-If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
-
-## Domain name system
+## 域名系统
 
 <p align="center">
   <img src="images/IOyLj4i.jpg">
   <br/>
-  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
+  <strong><a href="http://www.slideshare.net/srikrupa5/dns-security-presentation-issa">来源：DNS 安全介绍</a></strong>
 </p>
 
-A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
+域名系统是把 www.example.com 等域名转换成 IP 地址。
 
-DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
+域名系统是分层次的，一些 DNS 服务器位于顶层。当查询（域名） IP 时，路由或 ISP 提供连接 DNS 服务器的信息。较底层的 DNS 服务器缓存映射，它可能会因为 DNS 传播延时而失效。DNS 结果可以缓存在浏览器或操作系统中一段时间，时间长短取决于[存活时间 TTL](https://en.wikipedia.org/wiki/Time_to_live)。
 
-* **NS record (name server)** - Specifies the DNS servers for your domain/subdomain.
-* **MX record (mail exchange)** - Specifies the mail servers for accepting messages.
-* **A record (address)** - Points a name to an IP address.
-* **CNAME (canonical)** - Points a name to another name or `CNAME` (example.com to www.example.com) or to an `A` record.
+* **NS 记录（域名服务）** ─ 指定解析域名或子域名的 DNS 服务器。
+* **MX 记录（邮件交换）** ─ 指定接收信息的邮件服务器。
+* **A 记录（地址）** ─ 指定域名对应的 IP 地址记录。
+* **CNAME（规范）** ─ 一个域名映射到另一个域名或 `CNAME` 记录（ example.com 指向 www.example.com ）或映射到一个 `A` 记录。
 
-Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services.  Some DNS services can route traffic through various methods:
+[CloudFlare](https://www.cloudflare.com/dns/) 和 [Route 53](https://aws.amazon.com/route53/) 等平台提供管理 DNS 的功能。某些 DNS 服务通过集中方式来路由流量:
 
-* [Weighted round robin](https://www.jscape.com/blog/load-balancing-algorithms)
-    * Prevent traffic from going to servers under maintenance
-    * Balance between varying cluster sizes
-    * A/B testing
-* [Latency-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-latency)
-* [Geolocation-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-geo)
+* [加权轮询调度](http://g33kinfo.com/info/archives/2657)
+    * 防止流量进入维护中的服务器
+    * 在不同大小集群间负载均衡
+    * A/B 测试
+* 基于延迟路由
+* 基于地理位置路由
 
-### Disadvantage(s): DNS
+### 缺陷:DNS
 
-* Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
-* DNS server management could be complex and is generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
-* DNS services have recently come under [DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
+* 虽说缓存可以减轻 DNS 延迟，但连接 DNS 服务器还是带来了轻微的延迟。
+* 虽然它们通常由[政府，网络服务提供商和大公司](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729)管理，但 DNS 服务管理仍可能是复杂的。
+* DNS 服务最近遭受 [DDoS 攻击](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，阻止不知道 Twitter IP 地址的用户访问 Twitter。
 
-### Source(s) and further reading
+### 来源及延伸阅读
 
-* [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
+* [DNS 架构](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
-* [DNS articles](https://support.dnsimple.com/categories/dns/)
+* [关于 DNS 的文章](https://support.dnsimple.com/categories/dns/)
 
-## Content delivery network
+## 内容分发网络（CDN）
 
 <p align="center">
   <img src="images/h9TAuGI.jpg">
   <br/>
-  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
+  <strong><a href="https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/">来源：为什么使用 CDN</a></strong>
 </p>
 
-A content delivery network (CDN) is a globally distributed network of proxy servers, serving content from locations closer to the user.  Generally, static files such as HTML/CSS/JS, photos, and videos are served from CDN, although some CDNs such as Amazon's CloudFront support dynamic content.  The site's DNS resolution will tell clients which server to contact.
+内容分发网络（CDN）是一个全球性的代理服务器分布式网络，它从靠近用户的位置提供内容。通常，HTML/CSS/JS，图片和视频等静态内容由 CDN 提供，虽然亚马逊 CloudFront 等也支持动态内容。CDN 的 DNS 解析会告知客户端连接哪台服务器。
 
-Serving content from CDNs can significantly improve performance in two ways:
+将内容存储在 CDN 上可以从两个方面来提供性能:
 
-* Users receive content from data centers close to them
-* Your servers do not have to serve requests that the CDN fulfills
+* 从靠近用户的数据中心提供资源
+* 通过 CDN 你的服务器不必真的处理请求
 
-### Push CDNs
+### CDN 推送（push）
 
-Push CDNs receive new content whenever changes occur on your server.  You take full responsibility for providing content, uploading directly to the CDN and rewriting URLs to point to the CDN.  You can configure when content expires and when it is updated.  Content is uploaded only when it is new or changed, minimizing traffic, but maximizing storage.
+当你服务器上内容发生变动时，推送 CDN 接受新内容。直接推送给 CDN 并重写 URL 地址以指向你的内容的 CDN 地址。你可以配置内容到期时间及何时更新。内容只有在更改或新增是才推送，流量最小化，但储存最大化。
 
-Sites with a small amount of traffic or sites with content that isn't often updated work well with push CDNs.  Content is placed on the CDNs once, instead of being re-pulled at regular intervals.
+### CDN 拉取（pull）
 
-### Pull CDNs
+CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源。你将内容留在自己的服务器上并重写 URL 指向 CDN 地址。直到内容被缓存在 CDN 上为止，这样请求只会更慢，
 
-Pull CDNs grab new content from your server when the first user requests the content.  You leave the content on your server and rewrite URLs to point to the CDN.  This results in a slower request until the content is cached on the CDN.
+[存活时间（TTL）](https://en.wikipedia.org/wiki/Time_to_live)决定缓存多久时间。CDN 拉取方式最小化 CDN 上的储存空间，但如果过期文件并在实际更改之前被拉取，则会导致冗余的流量。
 
-A [time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) determines how long content is cached.  Pull CDNs minimize storage space on the CDN, but can create redundant traffic if files expire and are pulled before they have actually changed.
+高流量站点使用 CDN 拉取效果不错，因为只有最近请求的内容保存在 CDN 中，流量才能更平衡地分散。
 
-Sites with heavy traffic work well with pull CDNs, as traffic is spread out more evenly with only recently-requested content remaining on the CDN.
+### 缺陷：CDN
 
-### Disadvantage(s): CDN
+* CDN 成本可能因流量而异，可能在权衡之后你将不会使用 CDN。
+* 如果在 TTL 过期之前更新内容，CDN 缓存内容可能会过时。
+* CDN 需要更改静态内容的 URL 地址以指向 CDN。
 
-* CDN costs could be significant depending on traffic, although this should be weighed with additional costs you would incur not using a CDN.
-* Content might be stale if it is updated before the TTL expires it.
-* CDNs require changing URLs for static content to point to the CDN.
+### 来源及延伸阅读
 
-### Source(s) and further reading
-
-* [Globally distributed content delivery](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
-* [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+* [全球性内容分发网络](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)
+* [CDN 拉取和 CDN 推送的区别](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 
-## Load balancer
+## 负载均衡器
 
 <p align="center">
   <img src="images/h81n9iK.png">
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <strong><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">来源：可扩展的系统设计模式</a></strong>
 </p>
 
-Load balancers distribute incoming client requests to computing resources such as application servers and databases.  In each case, the load balancer returns the response from the computing resource to the appropriate client.  Load balancers are effective at:
+负载均衡器将传入的请求分发到应用服务器和数据库等计算资源。无论哪种情况，负载均衡器将从计算资源来的响应返回给恰当的客户端。负载均衡器的效用在于:
 
-* Preventing requests from going to unhealthy servers
-* Preventing overloading resources
-* Helping to eliminate a single point of failure
+* 防止请求进入不好的服务器
+* 防止资源过载
+* 帮助消除单一的故障点
 
-Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
+负载均衡器可以通过硬件（昂贵）或 HAProxy 等软件来实现。
+增加的好处包括:
 
-Additional benefits include:
+* **SSL 终结** ─ 解密传入的请求并加密服务器响应，这样的话后端服务器就不必再执行这些潜在高消耗运算了。
+    * 不需要再每台服务器上安装 [X.509 证书](https://en.wikipedia.org/wiki/X.509)。
+* **Session 留存** ─ 如果 Web 应用程序不追踪会话，发出 cookie 并将特定客户端的请求路由到同一实例。
 
-* **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
-* **Session persistence** - Issue cookies and route a specific client's requests to same instance if the web apps do not keep track of sessions
+通常会设置采用[工作─备用](#工作到备用切换active-passive) 或 [双工作](#双工作切换active-active) 模式的多个负载均衡器，以免发生故障。
 
-To protect against failures, it's common to set up multiple load balancers, either in [active-passive](#active-passive) or [active-active](#active-active) mode.
+负载均衡器能基于多种方式来路由流量:
 
-Load balancers can route traffic based on various metrics, including:
+* 随机
+* 最少负载
+* Session/cookie
+* [轮询调度或加权轮询调度算法](http://g33kinfo.com/info/archives/2657)
+* [四层负载均衡](#四层负载均衡)
+* [七层负载均衡](#七层负载均衡)
 
-* Random
-* Least loaded
-* Session/cookies
-* [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
-* [Layer 4](#layer-4-load-balancing)
-* [Layer 7](#layer-7-load-balancing)
+### 四层负载均衡
 
-### Layer 4 load balancing
+四层负载均衡根据监看[传输层](#通讯)的信息来决定如何分发请求。通常，这会涉及来源，目标 IP 地址和请求头中的端口，但不包括数据包（报文）内容。四层负载均衡执行[网络地址转换（NAT）](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)来向上游服务器转发网络数据包。
 
-Layer 4 load balancers look at info at the [transport layer](#communication) to decide how to distribute requests.  Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet.  Layer 4 load balancers forward network packets to and from the upstream server, performing [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
+### 七层负载均衡器
 
-### Layer 7 load balancing
+七层负载均衡器根据监控[应用层](#通讯)来决定怎样分发请求。这会涉及请求头的内容，消息和 cookie。七层负载均衡器终结网络流量，读取消息，做出负载均衡判定，然后传送给特定服务器。比如，一个七层负载均衡器能直接将视频流量连接到托管视频的服务器，同时将更敏感的用户账单流量引导到安全性更强的服务器。
 
-Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminate network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
+以损失灵活性为代价，四层负载均衡比七层负载均衡花费更少时间和计算资源，虽然这对现代商用硬件的性能影响甚微。
 
-At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
+### 水平扩展
 
-### Horizontal scaling
+负载均衡器还能帮助水平扩展，提高性能和可用性。使用商业硬件的性价比更高，并且比在单台硬件上**垂直扩展**更贵的硬件具有更高的可用性。相比招聘特定企业系统人才，招聘商业硬件方面的人才更加容易。
 
-Load balancers can also help with horizontal scaling, improving performance and availability.  Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called **Vertical Scaling**.  It is also easier to hire for talent working on commodity hardware than it is for specialized enterprise systems.
+#### 缺陷：水平扩展
 
-#### Disadvantage(s): horizontal scaling
+* 水平扩展引入了复杂度并涉及服务器复制
+    * 服务器应该是无状态的:它们也不该包含像 session 或资料图片等与用户关联的数据。
+    * session 可以集中存储在数据库或持久化[缓存](#缓存)（Redis、Memcached）的数据存储区中。
+* 缓存和数据库等下游服务器需要随着上游服务器进行扩展，以处理更多的并发连接。
 
-* Scaling horizontally introduces complexity and involves cloning servers
-    * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
-    * Sessions can be stored in a centralized data store such as a [database](#database) (SQL, NoSQL) or a persistent [cache](#cache) (Redis, Memcached)
-* Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
+### 缺陷：负载均衡器
 
-### Disadvantage(s): load balancer
+* 如果没有足够的资源配置或配置错误，负载均衡器会变成一个性能瓶颈。
+* 引入负载均衡器以帮助消除单点故障但导致了额外的复杂性。
+* 单个负载均衡器会导致单点故障，但配置多个负载均衡器会进一步增加复杂性。
 
-* The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
-* Introducing a load balancer to help eliminate a single point of failure results in increased complexity.
-* A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
+### 来源及延伸阅读
 
-### Source(s) and further reading
-
-* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Scalability](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [可扩展性](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
-* [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
-* [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
-* [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+* [四层负载平衡](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+* [七层负载平衡](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+* [ELB 监听器配置](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
-## Reverse proxy (web server)
+## 反向代理（web 服务器）
 
 <p align="center">
   <img src="images/n41Azff.png">
   <br/>
-  <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
+  <strong><a href="https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg">资料来源：维基百科</a></strong>
   <br/>
 </p>
 
-A reverse proxy is a web server that centralizes internal services and provides unified interfaces to the public.  Requests from clients are forwarded to a server that can fulfill it before the reverse proxy returns the server's response to the client.
+反向代理是一种可以集中地调用内部服务，并提供统一接口给公共客户的 web 服务器。来自客户端的请求先被反向代理服务器转发到可响应请求的服务器，然后代理再把服务器的响应结果返回给客户端。
 
-Additional benefits include:
+带来的好处包括：
 
-* **Increased security** - Hide information about backend servers, blacklist IPs, limit number of connections per client
-* **Increased scalability and flexibility** - Clients only see the reverse proxy's IP, allowing you to scale servers or change their configuration
-* **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
-* **Compression** - Compress server responses
-* **Caching** - Return the response for cached requests
-* **Static content** - Serve static content directly
-    * HTML/CSS/JS
-    * Photos
-    * Videos
-    * Etc
+- **增加安全性** - 隐藏后端服务器的信息，屏蔽黑名单中的 IP，限制每个客户端的连接数。
+- **提高可扩展性和灵活性** - 客户端只能看到反向代理服务器的 IP，这使你可以增减服务器或者修改它们的配置。
+- **本地终结 SSL 会话** - 解密传入请求，加密服务器响应，这样后端服务器就不必完成这些潜在的高成本的操作。
+  - 免除了在每个服务器上安装 [X.509](https://en.wikipedia.org/wiki/X.509) 证书的需要
+- **压缩** - 压缩服务器响应
+- **缓存** - 直接返回命中的缓存结果
+- **静态内容** - 直接提供静态内容
+  - HTML/CSS/JS
+  - 图片
+  - 视频
+  - 等等
 
-### Load balancer vs reverse proxy
+### 负载均衡器与反向代理
 
-* Deploying a load balancer is useful when you have multiple servers.  Often, load balancers  route traffic to a set of servers serving the same function.
-* Reverse proxies can be useful even with just one web server or application server, opening up the benefits described in the previous section.
-* Solutions such as NGINX and HAProxy can support both layer 7 reverse proxying and load balancing.
+- 当你有多个服务器时，部署负载均衡器非常有用。通常，负载均衡器将流量路由给一组功能相同的服务器上。
+- 即使只有一台 web 服务器或者应用服务器时，反向代理也有用，可以参考上一节介绍的好处。
+- NGINX 和 HAProxy 等解决方案可以同时支持第七层反向代理和负载均衡。
 
-### Disadvantage(s): reverse proxy
+### 不利之处：反向代理
 
-* Introducing a reverse proxy results in increased complexity.
-* A single reverse proxy is a single point of failure, configuring multiple reverse proxies (ie a [failover](https://en.wikipedia.org/wiki/Failover)) further increases complexity.
+- 引入反向代理会增加系统的复杂度。
+- 单独一个反向代理服务器仍可能发生单点故障，配置多台反向代理服务器（如[故障转移](https://en.wikipedia.org/wiki/Failover)）会进一步增加复杂度。
 
-### Source(s) and further reading
+### 来源及延伸阅读
 
-* [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
-* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
-## Application layer
+- [反向代理与负载均衡](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+- [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+- [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+- [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
+
+## 应用层
 
 <p align="center">
   <img src="images/yB5SYwm.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <strong><a href="http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer">资料来源：可缩放系统构架介绍</a></strong>
 </p>
 
-Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.  The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
+将 Web 服务层与应用层（也被称作平台层）分离，可以独立缩放和配置这两层。添加新的 API 只需要添加应用服务器，而不必添加额外的 web 服务器。
 
-Workers in the application layer also help enable [asynchronism](#asynchronism).
+**单一职责原则**提倡小型的，自治的服务共同合作。小团队通过提供小型的服务，可以更激进地计划增长。
 
-### Microservices
+应用层中的工作进程也有可以实现[异步化](#异步)。
 
-Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices), which can be described as a suite of independently deployable, small, modular services.  Each service runs a unique process and communicates through a well-defined, lightweight mechanism to serve a business goal. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+### 微服务
 
-Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
+与此讨论相关的话题是 [微服务](https://en.wikipedia.org/wiki/Microservices)，可以被描述为一系列可以独立部署的小型的，模块化服务。每个服务运行在一个独立的线程中，通过明确定义的轻量级机制通讯，共同实现业务目标。<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
-### Service Discovery
+例如，Pinterest 可能有这些微服务： 用户资料、关注者、Feed 流、搜索、照片上传等。
 
-Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
+### 服务发现
 
-### Disadvantage(s): application layer
+像 [Consul](https://www.consul.io/docs/index.html)，[Etcd](https://coreos.com/etcd/docs/latest) 和 [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) 这样的系统可以通过追踪注册名、地址、端口等信息来帮助服务互相发现对方。[Health checks](https://www.consul.io/intro/getting-started/checks.html) 可以帮助确认服务的完整性和是否经常使用一个 [HTTP](#超文本传输协议http) 路径。Consul 和 Etcd 都有一个内建的 [key-value 存储](#键-值存储) 用来存储配置信息和其他的共享信息。
 
-* Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).
-* Microservices can add complexity in terms of deployments and operations.
+### 不利之处：应用层
 
-### Source(s) and further reading
+- 添加由多个松耦合服务组成的应用层，从架构、运营、流程等层面来讲将非常不同（相对于单体系统）。
+- 微服务会增加部署和运营的复杂度。
 
-* [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
-* [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
-* [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
-* [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
-* [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
-## Database
+### 来源及延伸阅读
+
+- [可缩放系统构架介绍](http://lethain.com/introduction-to-architecting-systems-for-scale)
+- [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+- [面向服务架构](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+- [Zookeeper 介绍](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
+- [构建微服务，你所需要知道的一切](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+
+## 数据库
 
 <p align="center">
   <img src="images/Xkm5CXz.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
+  <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
 
-### Relational database management system (RDBMS)
+### 关系型数据库管理系统（RDBMS）
 
-A relational database like SQL is a collection of data items organized in tables.
+像 SQL 这样的关系型数据库是一系列以表的形式组织的数据项集合。
 
-**ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
+> 校对注：这里作者 SQL 可能指的是 MySQL
 
-* **Atomicity** - Each transaction is all or nothing
-* **Consistency** - Any transaction will bring the database from one valid state to another
-* **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
-* **Durability** - Once a transaction has been committed, it will remain so
+**ACID** 用来描述关系型数据库[事务](https://en.wikipedia.org/wiki/Database_transaction)的特性。
 
-There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
+- **原子性** - 每个事务内部所有操作要么全部完成，要么全部不完成。
+- **一致性** - 任何事务都使数据库从一个有效的状态转换到另一个有效状态。
+- **隔离性** - 并发执行事务的结果与顺序执行事务的结果相同。
+- **持久性** - 事务提交后，对系统的影响是永久的。
 
-#### Master-slave replication
-
-The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
+关系型数据库扩展包括许多技术：**主从复制**、**主主复制**、**联合**、**分片**、**非规范化**和 **SQL调优**。
 
 <p align="center">
   <img src="images/C9ioGtn.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
 
-##### Disadvantage(s): master-slave replication
+#### 主从复制
 
-* Additional logic is needed to promote a slave to a master.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+主库同时负责读取和写入操作，并复制写入到一个或多个从库中，从库只负责读操作。树状形式的从库再将写入复制到更多的从库中去。如果主库离线，系统可以以只读模式运行，直到某个从库被提升为主库或有新的主库出现。
 
-#### Master-master replication
+##### 不利之处：主从复制
 
-Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
+- 将从库提升为主库需要额外的逻辑。
+- 参考[不利之处：复制](#不利之处复制)中，主从复制和主主复制**共同**的问题。
 
 <p align="center">
   <img src="images/krAHLGg.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
 
-##### Disadvantage(s): master-master replication
+#### 主主复制
 
-* You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
-* Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
-* Conflict resolution comes more into play as more write nodes are added and as latency increases.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+两个主库都负责读操作和写操作，写入操作时互相协调。如果其中一个主库挂机，系统可以继续读取和写入。
 
-##### Disadvantage(s): replication
+##### 不利之处： 主主复制
 
-* There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
-* Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-* The more read slaves, the more you have to replicate, which leads to greater replication lag.
-* On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
-* Replication adds more hardware and additional complexity.
+- 你需要添加负载均衡器或者在应用逻辑中做改动，来确定写入哪一个数据库。
+- 多数主-主系统要么不能保证一致性（违反 ACID），要么因为同步产生了写入延迟。
+- 随着更多写入节点的加入和延迟的提高，如何解决冲突显得越发重要。
+- 参考[不利之处：复制](#不利之处复制)中，主从复制和主主复制**共同**的问题。
 
-##### Source(s) and further reading: replication
+##### 不利之处：复制
 
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
 
-#### Federation
+- 如果主库在将新写入的数据复制到其他节点前挂掉，则有数据丢失的可能。
+- 写入会被重放到负责读取操作的副本。副本可能因为过多写操作阻塞住，导致读取功能异常。
+- 读取从库越多，需要复制的写入数据就越多，导致更严重的复制延迟。
+- 在某些数据库系统中，写入主库的操作可以用多个线程并行写入，但读取副本只支持单线程顺序地写入。
+- 复制意味着更多的硬件和额外的复杂度。
+
+
+##### 来源及延伸阅读
+
+
+- [扩展性，可用性，稳定性模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+- [多主复制](https://en.wikipedia.org/wiki/Multi-master_replication)
+
+#### 联合
 
 <p align="center">
   <img src="images/U3qV33e.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
+  <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
 
-Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
+联合（或按功能划分）将数据库按对应功能分割。例如，你可以有三个数据库：**论坛**、**用户**和**产品**，而不仅是一个单体数据库，从而减少每个数据库的读取和写入流量，减少复制延迟。较小的数据库意味着更多适合放入内存的数据，进而意味着更高的缓存命中几率。没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
 
-##### Disadvantage(s): federation
+##### 不利之处：联合
 
-* Federation is not effective if your schema requires huge functions or tables.
-* You'll need to update your application logic to determine which database to read and write.
-* Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
-* Federation adds more hardware and additional complexity.
 
-##### Source(s) and further reading: federation
+- 如果你的数据库模式需要大量的功能和数据表，联合的效率并不好。
+- 你需要更新应用程序的逻辑来确定要读取和写入哪个数据库。
+- 用 [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers) 从两个库联结数据更复杂。
+- 联合需要更多的硬件和额外的复杂度。
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
+##### 来源及延伸阅读：联合
 
-#### Sharding
+- [扩展你的用户数到第一个一千万](https://www.youtube.com/watch?v=w95murBkYmU)
+
+#### 分片
 
 <p align="center">
   <img src="images/wU8x5Id.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
 
-Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
+分片将数据分配在不同的数据库上，使得每个数据库仅管理整个数据集的一个子集。以用户数据库为例，随着用户数量的增加，越来越多的分片会被添加到集群中。
 
-Similar to the advantages of [federation](#federation), sharding results in less read and write traffic, less replication, and more cache hits.  Index size is also reduced, which generally improves performance with faster queries.  If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss.  Like federation, there is no single central master serializing writes, allowing you to write in parallel with increased throughput.
+类似[联合](#联合)的优点，分片可以减少读取和写入流量，减少复制并提高缓存命中率。也减少了索引，通常意味着查询更快，性能更好。如果一个分片出问题，其他的仍能运行，你可以使用某种形式的冗余来防止数据丢失。类似联合，没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
 
-Common ways to shard a table of users is either through the user's last name initial or the user's geographic location.
+常见的做法是用户姓氏的首字母或者用户的地理位置来分隔用户表。
 
-##### Disadvantage(s): sharding
+##### 不利之处：分片
 
-* You'll need to update your application logic to work with shards, which could result in complex SQL queries.
-* Data distribution can become lopsided in a shard.  For example, a set of power users on a shard could result in increased load to that shard compared to others.
-    * Rebalancing adds additional complexity.  A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
-* Joining data from multiple shards is more complex.
-* Sharding adds more hardware and additional complexity.
+- 你需要修改应用程序的逻辑来实现分片，这会带来复杂的 SQL 查询。
+- 分片不合理可能导致数据负载不均衡。例如，被频繁访问的用户数据会导致其所在分片的负载相对其他分片高。
+  - 再平衡会引入额外的复杂度。基于[一致性哈希](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)的分片算法可以减少这种情况。
+- 联结多个分片的数据操作更复杂。
+- 分片需要更多的硬件和额外的复杂度。
 
-##### Source(s) and further reading: sharding
+#### 来源及延伸阅读：分片
 
-* [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
-* [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
-* [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
+- [分片时代来临](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
+- [数据库分片架构](https://en.wikipedia.org/wiki/Shard_(database_architecture))
+- [一致性哈希](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
-#### Denormalization
+#### 非规范化
 
-Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
+非规范化试图以写入性能为代价来换取读取性能。在多个表中冗余数据副本，以避免高成本的联结操作。一些关系型数据库，比如 [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) 和 Oracle 支持[物化视图](https://en.wikipedia.org/wiki/Materialized_view)，可以处理冗余信息存储和保证冗余副本一致。
 
-Once data becomes distributed with techniques such as [federation](#federation) and [sharding](#sharding), managing joins across data centers further increases complexity.  Denormalization might circumvent the need for such complex joins.
+当数据使用诸如[联合](#联合)和[分片](#分片)等技术被分割，进一步提高了处理跨数据中心的联结操作复杂度。非规范化可以规避这种复杂的联结操作。
 
-In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A read resulting in a complex database join can be very expensive, spending a significant amount of time on disk operations.
+在多数系统中，读取操作的频率远高于写入操作，比例可达到 100:1，甚至 1000:1。需要复杂的数据库联结的读取操作成本非常高，在磁盘操作上消耗了大量时间。
 
-##### Disadvantage(s): denormalization
+##### 不利之处：非规范化
 
-* Data is duplicated.
-* Constraints can help redundant copies of information stay in sync, which increases complexity of the database design.
-* A denormalized database under heavy write load might perform worse than its normalized counterpart.
+- 数据会冗余。
+- 约束可以帮助冗余的信息副本保持同步，但这样会增加数据库设计的复杂度。
+- 非规范化的数据库在高写入负载下性能可能比规范化的数据库差。
 
-###### Source(s) and further reading: denormalization
+##### 来源及延伸阅读：非规范化
 
-* [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
+- [非规范化](https://en.wikipedia.org/wiki/Denormalization)
 
-#### SQL tuning
+#### SQL 调优
 
-SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
+SQL 调优是一个范围很广的话题，有很多相关的[书](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning)可以作为参考。
 
-It's important to **benchmark** and **profile** to simulate and uncover bottlenecks.
+利用**基准测试**和**性能分析**来模拟和发现系统瓶颈很重要。
 
-* **Benchmark** - Simulate high-load situations with tools such as [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
-* **Profile** - Enable tools such as the [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) to help track performance issues.
+- **基准测试** - 用 [ab](http://httpd.apache.org/docs/2.2/programs/ab.html) 等工具模拟高负载情况。
+- **性能分析** - 通过启用如[慢查询日志](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)等工具来辅助追踪性能问题。
 
-Benchmarking and profiling might point you to the following optimizations.
+基准测试和性能分析可能会指引你到以下优化方案。
 
-##### Tighten up the schema
+##### 改进模式
 
-* MySQL dumps to disk in contiguous blocks for fast access.
-* Use `CHAR` instead of `VARCHAR` for fixed-length fields.
-    * `CHAR` effectively allows for fast, random access, whereas with `VARCHAR`, you must find the end of a string before moving onto the next one.
-* Use `TEXT` for large blocks of text such as blog posts.  `TEXT` also allows for boolean searches.  Using a `TEXT` field results in storing a pointer on disk that is used to locate the text block.
-* Use `INT` for larger numbers up to 2^32 or 4 billion.
-* Use `DECIMAL` for currency to avoid floating point representation errors.
-* Avoid storing large `BLOBS`, store the location of where to get the object instead.
-* `VARCHAR(255)` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
-* Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
+- 为了实现快速访问，MySQL 在磁盘上用连续的块存储数据。
+- 使用 `CHAR` 类型存储固定长度的字段，不要用 `VARCHAR`。
+  - `CHAR` 在快速、随机访问时效率很高。如果使用 `VARCHAR`，如果你想读取下一个字符串，不得不先读取到当前字符串的末尾。
+- 使用 `TEXT` 类型存储大块的文本，例如博客正文。`TEXT` 还允许布尔搜索。使用 `TEXT` 字段需要在磁盘上存储一个用于定位文本块的指针。
+- 使用 `INT` 类型存储高达 2^32 或 40 亿的较大数字。
+- 使用 `DECIMAL` 类型存储货币可以避免浮点数表示错误。
+- 避免使用 `BLOBS` 存储实际对象，而是用来存储存放对象的位置。
+- `VARCHAR(255)` 是以 8 位数字存储的最大字符数，在某些关系型数据库中，最大限度地利用字节。
+- 在适用场景中设置 `NOT NULL` 约束来[提高搜索性能](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)。
 
-##### Use good indices
+##### 使用正确的索引
 
-* Columns that you are querying (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) could be faster with indices.
-* Indices are usually represented as self-balancing [B-tree](https://en.wikipedia.org/wiki/B-tree) that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.
-* Placing an index can keep the data in memory, requiring more space.
-* Writes could also be slower since the index also needs to be updated.
-* When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
+- 你正查询（`SELECT`、`GROUP BY`、`ORDER BY`、`JOIN`）的列如果用了索引会更快。
+- 索引通常表示为自平衡的 [B 树](https://en.wikipedia.org/wiki/B-tree)，可以保持数据有序，并允许在对数时间内进行搜索，顺序访问，插入，删除操作。
+- 设置索引，会将数据存在内存中，占用了更多内存空间。
+- 写入操作会变慢，因为索引需要被更新。
+- 加载大量数据时，禁用索引再加载数据，然后重建索引，这样也许会更快。
 
-##### Avoid expensive joins
+##### 避免高成本的联结操作
 
-* [Denormalize](#denormalization) where performance demands it.
+- 有性能需要，可以进行非规范化。
 
-##### Partition tables
+##### 分割数据表
 
-* Break up a table by putting hot spots in a separate table to help keep it in memory.
+- 将热点数据拆分到单独的数据表中，可以有助于缓存。
 
-##### Tune the query cache
+##### 调优查询缓存
 
-* In some cases, the [query cache](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html) could lead to [performance issues](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/).
+- 在某些情况下，[查询缓存](http://dev.mysql.com/doc/refman/5.7/en/query-cache)可能会导致[性能问题](https://www.percona.com/blog/2014/01/28/10-mysql-performance-tuning-settings-after-installation/)。
 
-##### Source(s) and further reading: SQL tuning
+##### 来源及延伸阅读
 
-* [Tips for optimizing MySQL queries](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
-* [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
-* [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
-* [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+- [MySQL 查询优化小贴士](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
+- [为什么 VARCHAR(255) 很常见？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+- [Null 值是如何影响数据库性能的？](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
+- [慢查询日志](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
 ### NoSQL
 
-NoSQL is a collection of data items represented in a **key-value store**, **document store**, **wide column store**, or a **graph database**.  Data is denormalized, and joins are generally done in the application code.  Most NoSQL stores lack true ACID transactions and favor [eventual consistency](#eventual-consistency).
+NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或**图数据库**的统称。数据库是非规范化的，表联结大多在应用程序代码中完成。大多数 NoSQL 无法实现真正符合 ACID 的事务，支持[最终一致](#最终一致性)。
 
-**BASE** is often used to describe the properties of NoSQL databases.  In comparison with the [CAP Theorem](#cap-theorem), BASE chooses availability over consistency.
+**BASE** 通常被用于描述 NoSQL 数据库的特性。相比 [CAP 理论](#cap-理论)，BASE 强调可用性超过一致性。
 
-* **Basically available** - the system guarantees availability.
-* **Soft state** - the state of the system may change over time, even without input.
-* **Eventual consistency** - the system will become consistent over a period of time, given that the system doesn't receive input during that period.
+- **基本可用** - 系统保证可用性。
+- **软状态** - 即使没有输入，系统状态也可能随着时间变化。
+- **最终一致性** - 经过一段时间之后，系统最终会变一致，因为系统在此期间没有收到任何输入。
 
-In addition to choosing between [SQL or NoSQL](#sql-or-nosql), it is helpful to understand which type of NoSQL database best fits your use case(s).  We'll review **key-value stores**, **document stores**, **wide column stores**, and **graph databases** in the next section.
+除了在 [SQL 还是 NoSQL](#sql-还是-nosql) 之间做选择，了解哪种类型的 NoSQL 数据库最适合你的用例也是非常有帮助的。我们将在下一节中快速了解下 **键-值存储**、**文档型存储**、**列型存储**和**图存储**数据库。
 
-#### Key-value store
+#### 键-值存储
 
-> Abstraction: hash table
+> 抽象模型：哈希表
 
-A key-value store generally allows for O(1) reads and writes and is often backed by memory or SSD.  Data stores can maintain keys in [lexicographic order](https://en.wikipedia.org/wiki/Lexicographical_order), allowing efficient retrieval of key ranges.  Key-value stores can allow for storing of metadata with a value.
+键-值存储通常可以实现 O(1) 时间读写，用内存或 SSD 存储数据。数据存储可以按[字典顺序](https://en.wikipedia.org/wiki/Lexicographical_order)维护键，从而实现键的高效检索。键-值存储可以用于存储元数据。
 
-Key-value stores provide high performance and are often used for simple data models or for rapidly-changing data, such as an in-memory cache layer.  Since they offer only a limited set of operations, complexity is shifted to the application layer if additional operations are needed.
+键-值存储性能很高，通常用于存储简单数据模型或频繁修改的数据，如存放在内存中的缓存。键-值存储提供的操作有限，如果需要更多操作，复杂度将转嫁到应用程序层面。
 
-A key-value store is the basis for more complex systems such as a document store, and in some cases, a graph database.
+键-值存储是如文档存储，在某些情况下，甚至是图存储等更复杂的存储系统的基础。
 
-##### Source(s) and further reading: key-value store
+#### 来源及延伸阅读
 
-* [Key-value database](https://en.wikipedia.org/wiki/Key-value_database)
-* [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
-* [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
-* [Memcached architecture](https://adayinthelifeof.nl/2011/02/06/memcache-internals/)
+- [键-值数据库](https://en.wikipedia.org/wiki/Key-value_database)
+- [键-值存储的劣势](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
+- [Redis 架构](http://qnimate.com/overview-of-redis-architecture/)
+- [Memcached 架构](https://adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
-#### Document store
+#### 文档类型存储
 
-> Abstraction: key-value store with documents stored as values
+> 抽象模型：将文档作为值的键-值存储
 
-A document store is centered around documents (XML, JSON, binary, etc), where a document stores all information for a given object.  Document stores provide APIs or a query language to query based on the internal structure of the document itself.  *Note, many key-value stores include features for working with a value's metadata, blurring the lines between these two storage types.*
+文档类型存储以文档（XML、JSON、二进制文件等）为中心，文档存储了指定对象的全部信息。文档存储根据文档自身的内部结构提供 API 或查询语句来实现查询。请注意，许多键-值存储数据库有用值存储元数据的特性，这也模糊了这两种存储类型的界限。
 
-Based on the underlying implementation, documents are organized by collections, tags, metadata, or directories.  Although documents can be organized or grouped together, documents may have fields that are completely different from each other.
+基于底层实现，文档可以根据集合、标签、元数据或者文件夹组织。尽管不同文档可以被组织在一起或者分成一组，但相互之间可能具有完全不同的字段。
 
-Some document stores like [MongoDB](https://www.mongodb.com/mongodb-architecture) and [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) also provide a SQL-like language to perform complex queries.  [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) supports both key-values and documents.
+MongoDB 和 CouchDB 等一些文档类型存储还提供了类似 SQL 语言的查询语句来实现复杂查询。DynamoDB 同时支持键-值存储和文档类型存储。
 
-Document stores provide high flexibility and are often used for working with occasionally changing data.
+文档类型存储具备高度的灵活性，常用于处理偶尔变化的数据。
 
-##### Source(s) and further reading: document store
+#### 来源及延伸阅读：文档类型存储
 
-* [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
-* [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
-* [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
-* [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+- [面向文档的数据库](https://en.wikipedia.org/wiki/Document-oriented_database)
+- [MongoDB 架构](https://www.mongodb.com/mongodb-architecture)
+- [CouchDB 架构](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
+- [Elasticsearch 架构](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
-#### Wide column store
+#### 列型存储
 
 <p align="center">
   <img src="images/n16iOGk.png">
   <br/>
-  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
+  <strong><a href="http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html">资料来源: SQL 和 NoSQL，一个简短的历史</a></strong>
 </p>
 
-> Abstraction: nested map `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
+> 抽象模型：嵌套的 `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>` 映射
 
-A wide column store's basic unit of data is a column (name/value pair).  A column can be grouped in column families (analogous to a SQL table).  Super column families further group column families.  You can access each column independently with a row key, and columns with the same row key form a row.  Each value contains a timestamp for versioning and for conflict resolution.
+类型存储的基本数据单元是列（名／值对）。列可以在列族（类似于 SQL 的数据表）中被分组。超级列族再分组普通列族。你可以使用行键独立访问每一列，具有相同行键值的列组成一行。每个值都包含版本的时间戳用于解决版本冲突。
 
-Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) as the first wide column store, which influenced the open-source [HBase](https://www.edureka.co/blog/hbase-architecture/) often-used in the Hadoop ecosystem, and [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) from Facebook.  Stores such as BigTable, HBase, and Cassandra maintain keys in lexicographic order, allowing efficient retrieval of selective key ranges.
+Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)，它影响了 Hadoop 生态系统中活跃的开源数据库 [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) 和 Facebook 的 [Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)。像 BigTable，HBase 和 Cassandra 这样的存储系统将键以字母顺序存储，可以高效地读取键列。
 
-Wide column stores offer high availability and high scalability.  They are often used for very large data sets.
+列型存储具备高可用性和高可扩展性。通常被用于大数据相关存储。
 
-##### Source(s) and further reading: wide column store
+##### 来源及延伸阅读：列型存储
 
-* [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
-* [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-* [HBase architecture](https://www.edureka.co/blog/hbase-architecture/)
-* [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
+- [SQL 与 NoSQL 简史](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
+- [BigTable 架构](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
+- [Hbase 架构](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+- [Cassandra 架构](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
 
-#### Graph database
+#### 图数据库
 
 <p align="center">
   <img src="images/fNcl65g.png">
   <br/>
-  <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
+  <strong><a href="https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png"/>资料来源：图数据库</a></strong>
 </p>
 
-> Abstraction: graph
+> 抽象模型： 图
 
-In a graph database, each node is a record and each arc is a relationship between two nodes.  Graph databases are optimized to represent complex relationships with many foreign keys or many-to-many relationships.
+在图数据库中，一个节点对应一条记录，一个弧对应两个节点之间的关系。图数据库被优化用于表示外键繁多的复杂关系或多对多关系。
 
-Graphs databases offer high performance for data models with complex relationships, such as a social network.  They are relatively new and are not yet widely-used; it might be more difficult to find development tools and resources.  Many graphs can only be accessed with [REST APIs](#representational-state-transfer-rest).
+图数据库为存储复杂关系的数据模型，如社交网络，提供了很高的性能。它们相对较新，尚未广泛应用，查找开发工具或者资源相对较难。许多图只能通过 [REST API](#表述性状态转移rest) 访问。
 
-##### Source(s) and further reading: graph
+##### 相关资源和延伸阅读：图
+- [图数据库](https://en.wikipedia.org/wiki/Graph_database)
+- [Neo4j](https://neo4j.com/)
+- [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 
-* [Graph database](https://en.wikipedia.org/wiki/Graph_database)
-* [Neo4j](https://neo4j.com/)
-* [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
+#### 来源及延伸阅读：NoSQL
 
-#### Source(s) and further reading: NoSQL
+- [数据库术语解释](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
+- [NoSQL 数据库 - 调查及决策指南](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
+- [可扩展性](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+- [NoSQL 介绍](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+- [NoSQL 模式](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
-* [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
-* [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-* [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
-* [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
-
-### SQL or NoSQL
+### SQL 还是 NoSQL
 
 <p align="center">
   <img src="images/wXGqG5f.png">
   <br/>
-  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
+  <strong><a href="https://www.infoq.com/articles/Transition-RDBMS-NoSQL/">资料来源：从 RDBMS 转换到 NoSQL</a></strong>
 </p>
 
-Reasons for **SQL**:
+选取 **SQL** 的原因:
 
-* Structured data
-* Strict schema
-* Relational data
-* Need for complex joins
-* Transactions
-* Clear patterns for scaling
-* More established: developers, community, code, tools, etc
-* Lookups by index are very fast
+- 结构化数据
+- 严格的模式
+- 关系型数据
+- 需要复杂的联结操作
+- 事务
+- 清晰的扩展模式
+- 既有资源更丰富：开发者、社区、代码库、工具等
+- 通过索引进行查询非常快
 
-Reasons for **NoSQL**:
+选取 **NoSQL** 的原因：
 
-* Semi-structured data
-* Dynamic or flexible schema
-* Non-relational data
-* No need for complex joins
-* Store many TB (or PB) of data
-* Very data intensive workload
-* Very high throughput for IOPS
+- 半结构化数据
+- 动态或灵活的模式
+- 非关系型数据
+- 不需要复杂的联结操作
+- 存储 TB （甚至 PB）级别的数据
+- 高数据密集的工作负载
+- IOPS 高吞吐量
 
-Sample data well-suited for NoSQL:
+适合 NoSQL 的示例数据：
 
-* Rapid ingest of clickstream and log data
-* Leaderboard or scoring data
-* Temporary data, such as a shopping cart
-* Frequently accessed ('hot') tables
-* Metadata/lookup tables
+- 埋点数据和日志数据
+- 排行榜或者得分数据
+- 临时数据，如购物车
+- 频繁访问的（“热”）表
+- 元数据／查找表
 
-##### Source(s) and further reading: SQL or NoSQL
+##### 来源及延伸阅读：SQL 或 NoSQL
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
-* [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
-
-## Cache
+- [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=w95murBkYmU)
+- [SQL 和 NoSQL 的不同](https://www.sitepoint.com/sql-vs-nosql-differences/)
+## 缓存
 
 <p align="center">
   <img src="images/Q6z24La.png">
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <strong><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">资料来源：可扩展的系统设计模式</a></strong>
 </p>
 
-Caching improves page load times and can reduce the load on your servers and databases.  In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.
+缓存可以提高页面加载速度，并可以减少服务器和数据库的负载。在这个模型中，分发器先查看请求之前是否被响应过，如果有则将之前的结果直接返回，来省掉真正的处理。
 
-Databases often benefit from a uniform distribution of reads and writes across its partitions.  Popular items can skew the distribution, causing bottlenecks.  Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.
+数据库分片均匀分布的读取是最好的。但是热门数据会让读取分布不均匀，这样就会造成瓶颈，如果在数据库前加个缓存，就会抹平不均匀的负载和突发流量对数据库的影响。
 
-### Client caching
+### 客户端缓存
 
-Caches can be located on the client side (OS or browser), [server side](#reverse-proxy-web-server), or in a distinct cache layer.
+缓存可以位于客户端（操作系统或者浏览器），[服务端](#反向代理web-服务器)或者不同的缓存层。
 
-### CDN caching
+### CDN 缓存
 
-[CDNs](#content-delivery-network) are considered a type of cache.
+[CDN](#内容分发网络cdn) 也被视为一种缓存。
 
-### Web server caching
+### Web 服务器缓存
 
-[Reverse proxies](#reverse-proxy-web-server) and caches such as [Varnish](https://www.varnish-cache.org/) can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.
+[反向代理](#反向代理web-服务器)和缓存（比如 [Varnish](https://www.varnish-cache.org/)）可以直接提供静态和动态内容。Web 服务器同样也可以缓存请求，返回相应结果而不必连接应用服务器。
 
-### Database caching
+### 数据库缓存
 
-Your database usually includes some level of caching in a default configuration, optimized for a generic use case.  Tweaking these settings for specific usage patterns can further boost performance.
+数据库的默认配置中通常包含缓存级别，针对一般用例进行了优化。调整配置，在不同情况下使用不同的模式可以进一步提高性能。
 
-### Application caching
+### 应用缓存
 
-In-memory caches such as Memcached and Redis are key-value stores between your application and your data storage.  Since the data is held in RAM, it is much faster than typical databases where data is stored on disk.  RAM is more limited than disk, so [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) algorithms such as [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) can help invalidate 'cold' entries and keep 'hot' data in RAM.
+基于内存的缓存比如 Memcached 和 Redis 是应用程序和数据存储之间的一种键值存储。由于数据保存在 RAM 中，它比存储在磁盘上的典型数据库要快多了。RAM 比磁盘限制更多，所以例如 [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) 的[缓存无效算法](https://en.wikipedia.org/wiki/Cache_algorithms)可以将「热门数据」放在 RAM 中，而对一些比较「冷门」的数据不做处理。
 
-Redis has the following additional features:
+Redis 有下列附加功能：
 
-* Persistence option
-* Built-in data structures such as sorted sets and lists
+- 持久性选项
+- 内置数据结构比如有序集合和列表
 
-There are multiple levels you can cache that fall into two general categories: **database queries** and **objects**:
+有多个缓存级别，分为两大类：**数据库查询**和**对象**：
 
-* Row level
-* Query-level
-* Fully-formed serializable objects
-* Fully-rendered HTML
+- 行级别
+- 查询级别
+- 完整的可序列化对象
+- 完全渲染的 HTML
 
-Generally, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
+一般来说，你应该尽量避免基于文件的缓存，因为这使得复制和自动缩放很困难。
 
-### Caching at the database query level
+### 数据库查询级别的缓存
 
-Whenever you query the database, hash the query as a key and store the result to the cache.  This approach suffers from expiration issues:
+当你查询数据库的时候，将查询语句的哈希值与查询结果存储到缓存中。这种方法会遇到以下问题：
 
-* Hard to delete a cached result with complex queries
-* If one piece of data changes such as a table cell, you need to delete all cached queries that might include the changed cell
+- 很难用复杂的查询删除已缓存结果。
+- 如果一条数据比如表中某条数据的一项被改变，则需要删除所有可能包含已更改项的缓存结果。
 
-### Caching at the object level
+### 对象级别的缓存
 
-See your data as an object, similar to what you do with your application code.  Have your application assemble the dataset from the database into a class instance or a data structure(s):
+将您的数据视为对象，就像对待你的应用代码一样。让应用程序将数据从数据库中组合到类实例或数据结构中：
 
-* Remove the object from cache if its underlying data has changed
-* Allows for asynchronous processing: workers assemble objects by consuming the latest cached object
+- 如果对象的基础数据已经更改了，那么从缓存中删掉这个对象。
+- 允许异步处理：workers 通过使用最新的缓存对象来组装对象。
 
-Suggestions of what to cache:
+建议缓存的内容：
 
-* User sessions
-* Fully rendered web pages
-* Activity streams
-* User graph data
+- 用户会话
+- 完全渲染的 Web 页面
+- 活动流
+- 用户图数据
 
-### When to update the cache
+### 何时更新缓存
 
-Since you can only store a limited amount of data in cache, you'll need to determine which cache update strategy works best for your use case.
+由于你只能在缓存中存储有限的数据，所以你需要选择一个适用于你用例的缓存更新策略。
 
-#### Cache-aside
+#### 缓存模式
 
 <p align="center">
   <img src="images/ONjORqk.png">
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <strong><a href="http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast">资料来源：从缓存到内存数据网格</a></strong>
 </p>
 
-The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:
+应用从存储器读写。缓存不和存储器直接交互，应用执行以下操作：
 
-* Look for entry in cache, resulting in a cache miss
-* Load entry from the database
-* Add entry to cache
-* Return entry
+- 在缓存中查找记录，如果所需数据不在缓存中
+- 从数据库中加载所需内容
+- 将查找到的结果存储到缓存中
+- 返回所需内容
 
 ```python
 def get_user(self, user_id):
@@ -1226,37 +1150,37 @@ def get_user(self, user_id):
     return user
 ```
 
-[Memcached](https://memcached.org/) is generally used in this manner.
+[Memcached](https://memcached.org/) 通常用这种方式使用。
 
-Subsequent reads of data added to cache are fast.  Cache-aside is also referred to as lazy loading.  Only requested data is cached, which avoids filling up the cache with data that isn't requested.
+添加到缓存中的数据读取速度很快。缓存模式也称为延迟加载。只缓存所请求的数据，这避免了没有被请求的数据占满了缓存空间。
 
-##### Disadvantage(s): cache-aside
+##### 缓存的缺点：
 
-* Each cache miss results in three trips, which can cause a noticeable delay.
-* Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL) which forces an update of the cache entry, or by using write-through.
-* When a node fails, it is replaced by a new, empty node, increasing latency.
+- 请求的数据如果不在缓存中就需要经过三个步骤来获取数据，这会导致明显的延迟。
+- 如果数据库中的数据更新了会导致缓存中的数据过时。这个问题需要通过设置 TTL 强制更新缓存或者直写模式来缓解这种情况。
+- 当一个节点出现故障的时候，它将会被一个新的节点替代，这增加了延迟的时间。
 
-#### Write-through
+#### 直写模式
 
 <p align="center">
   <img src="images/0vBc0hN.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
 
-The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:
+应用使用缓存作为主要的数据存储，将数据读写到缓存中，而缓存负责从数据库中读写数据。
 
-* Application adds/updates entry in cache
-* Cache synchronously writes entry to data store
-* Return
+- 应用向缓存中添加/更新数据
+- 缓存同步地写入数据存储
+- 返回所需内容
 
-Application code:
+应用代码：
 
-```python
+```
 set_user(12345, {"foo":"bar"})
 ```
 
-Cache code:
+缓存代码：
 
 ```python
 def set_user(user_id, values):
@@ -1264,214 +1188,216 @@ def set_user(user_id, values):
     cache.set(user_id, user)
 ```
 
-Write-through is a slow overall operation due to the write operation, but subsequent reads of just written data are fast.  Users are generally more tolerant of latency when updating data than reading data.  Data in the cache is not stale.
+由于存写操作所以直写模式整体是一种很慢的操作，但是读取刚写入的数据很快。相比读取数据，用户通常比较能接受更新数据时速度较慢。缓存中的数据不会过时。
 
-##### Disadvantage(s): write through
+##### 直写模式的缺点：
 
-* When a new node is created due to failure or scaling, the new node will not cache entries until the entry is updated in the database.  Cache-aside in conjunction with write through can mitigate this issue.
-* Most data written might never be read, which can be minimized with a TTL.
+- 由于故障或者缩放而创建的新的节点，新的节点不会缓存，直到数据库更新为止。缓存应用直写模式可以缓解这个问题。
+- 写入的大多数数据可能永远都不会被读取，用 TTL 可以最小化这种情况的出现。
 
-#### Write-behind (write-back)
+#### 回写模式
 
 <p align="center">
   <img src="images/rgSrvjG.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
 
-In write-behind, the application does the following:
+在回写模式中，应用执行以下操作：
 
-* Add/update entry in cache
-* Asynchronously write entry to the data store, improving write performance
+- 在缓存中增加或者更新条目
+- 异步写入数据，提高写入性能。
 
-##### Disadvantage(s): write-behind
+##### 回写模式的缺点：
 
-* There could be data loss if the cache goes down prior to its contents hitting the data store.
-* It is more complex to implement write-behind than it is to implement cache-aside or write-through.
+- 缓存可能在其内容成功存储之前丢失数据。
+- 执行直写模式比缓存或者回写模式更复杂。
 
-#### Refresh-ahead
+#### 刷新
 
 <p align="center">
   <img src="images/kxtjqgE.png">
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <strong><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>资料来源：从缓存到内存数据网格</a></strong>
 </p>
 
-You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
+你可以将缓存配置成在到期之前自动刷新最近访问过的内容。
 
-Refresh-ahead can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future.
+如果缓存可以准确预测将来可能请求哪些数据，那么刷新可能会导致延迟与读取时间的降低。
 
-##### Disadvantage(s): refresh-ahead
+##### 刷新的缺点：
 
-* Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
+- 不能准确预测到未来需要用到的数据可能会导致性能不如不使用刷新。
 
-### Disadvantage(s): cache
+### 缓存的缺点：
 
-* Need to maintain consistency between caches and the source of truth such as the database through [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
-* Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.
-* Need to make application changes such as adding Redis or memcached.
+- 需要保持缓存和真实数据源之间的一致性，比如数据库根据[缓存无效](https://en.wikipedia.org/wiki/Cache_algorithms)。
+- 需要改变应用程序比如增加 Redis 或者 memcached。
+- 无效缓存是个难题，什么时候更新缓存是与之相关的复杂问题。
 
-### Source(s) and further reading
+### 相关资源和延伸阅读
 
-* [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
-* [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
-* [Introduction to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Scalability](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-* [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
-* [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
+- [从缓存到内存数据](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
+- [可扩展系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
+- [可缩放系统构架介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
+- [可扩展性，可用性，稳定性和模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+- [可扩展性](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+- [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
+- [维基百科](https://en.wikipedia.org/wiki/Cache_(computing))
 
-## Asynchronism
+## 异步
 
 <p align="center">
   <img src="images/54GYsSx.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <strong><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>资料来源：可缩放系统构架介绍</a></strong>
 </p>
 
-Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
+异步工作流有助于减少那些原本顺序执行的请求时间。它们可以通过提前进行一些耗时的工作来帮助减少请求时间，比如定期汇总数据。
 
-### Message queues
+### 消息队列
 
-Message queues receive, hold, and deliver messages.  If an operation is too slow to perform inline, you can use a message queue with the following workflow:
+消息队列接收，保留和传递消息。如果按顺序执行操作太慢的话，你可以使用有以下工作流的消息队列：
 
-* An application publishes a job to the queue, then notifies the user of job status
-* A worker picks up the job from the queue, processes it, then signals the job is complete
+- 应用程序将作业发布到队列，然后通知用户作业状态
+- 一个 worker 从队列中取出该作业，对其进行处理，然后显示该作业完成
 
-The user is not blocked and the job is processed in the background.  During this time, the client might optionally do a small amount of processing to make it seem like the task has completed.  For example, if posting a tweet, the tweet could be instantly posted to your timeline, but it could take some time before your tweet is actually delivered to all of your followers.
+不去阻塞用户操作，作业在后台处理。在此期间，客户端可能会进行一些处理使得看上去像是任务已经完成了。例如，如果要发送一条推文，推文可能会马上出现在你的时间线上，但是可能需要一些时间才能将你的推文推送到你的所有关注者那里去。
 
-**[Redis](https://redis.io/)** is useful as a simple message broker but messages can be lost.
+**Redis** 是一个令人满意的简单的消息代理，但是消息有可能会丢失。
 
-**[RabbitMQ](https://www.rabbitmq.com/)** is popular but requires you to adapt to the 'AMQP' protocol and manage your own nodes.
+**RabbitMQ** 很受欢迎但是要求你适应「AMQP」协议并且管理你自己的节点。
 
-**[Amazon SQS](https://aws.amazon.com/sqs/)** is hosted but can have high latency and has the possibility of messages being delivered twice.
+**Amazon SQS** 是被托管的，但可能具有高延迟，并且消息可能会被传送两次。
 
-### Task queues
+### 任务队列
 
-Tasks queues receive tasks and their related data, runs them, then delivers their results.  They can support scheduling and can be used to run computationally-intensive jobs in the background.
+任务队列接收任务及其相关数据，运行它们，然后传递其结果。 它们可以支持调度，并可用于在后台运行计算密集型作业。
 
-**[Celery](https://docs.celeryproject.org/en/stable/)** has support for scheduling and primarily has python support.
+**Celery** 支持调度，主要是用 Python 开发的。
 
-### Back pressure
+### 背压
 
-If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue.  Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later.  Clients can retry the request at a later time, perhaps with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+如果队列开始明显增长，那么队列大小可能会超过内存大小，导致高速缓存未命中，磁盘读取，甚至性能更慢。[背压](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)可以通过限制队列大小来帮助我们，从而为队列中的作业保持高吞吐率和良好的响应时间。一旦队列填满，客户端将得到服务器忙或者 HTTP 503 状态码，以便稍后重试。客户端可以在稍后时间重试该请求，也许是[指数退避](https://en.wikipedia.org/wiki/Exponential_backoff)。
 
-### Disadvantage(s): asynchronism
+### 异步的缺点：
 
-* Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.
+- 简单的计算和实时工作流等用例可能更适用于同步操作，因为引入队列可能会增加延迟和复杂性。
 
-### Source(s) and further reading
+### 相关资源和延伸阅读
 
-* [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
-* [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
-* [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
-* [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
+- [这是一个数字游戏](https://www.youtube.com/watch?v=1KRYH75wgy4)
+- [超载时应用背压](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
+- [利特尔法则](https://en.wikipedia.org/wiki/Little%27s_law)
+- [消息队列与任务队列有什么区别？](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
-## Communication
+## 通讯
 
 <p align="center">
   <img src="images/5KeocQs.jpg">
   <br/>
-  <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
+  <strong><a href=http://www.escotal.com/osilayer.html>资料来源：OSI 7层模型</a></strong>
 </p>
 
-### Hypertext transfer protocol (HTTP)
+### 超文本传输协议（HTTP）
 
-HTTP is a method for encoding and transporting data between a client and a server.  It is a request/response protocol: clients issue requests and servers issue responses with relevant content and completion status info about the request.  HTTP is self-contained, allowing requests and responses to flow through many intermediate routers and servers that perform load balancing, caching, encryption, and compression.
+HTTP 是一种在客户端和服务器之间编码和传输数据的方法。它是一个请求/响应协议：客户端和服务端针对相关内容和完成状态信息的请求和响应。HTTP 是独立的，允许请求和响应流经许多执行负载均衡，缓存，加密和压缩的中间路由器和服务器。
 
-A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:
+一个基本的 HTTP 请求由一个动词（方法）和一个资源（端点）组成。 以下是常见的 HTTP 动词：
 
-| Verb | Description | Idempotent* | Safe | Cacheable |
-|---|---|---|---|---|
-| GET | Reads a resource | Yes | Yes | Yes |
-| POST | Creates a resource or trigger a process that handles data | No | No | Yes if response contains freshness info |
-| PUT | Creates or replace a resource | Yes | No | No |
-| PATCH | Partially updates a resource | No | No | Yes if response contains freshness info |
-| DELETE | Deletes a resource | Yes | No | No |
+| 动词     | 描述             | *幂等  | 安全性  | 可缓存            |
+| ------ | -------------- | ---- | ---- | -------------- |
+| GET    | 读取资源           | Yes  | Yes  | Yes            |
+| POST   | 创建资源或触发处理数据的进程 | No   | No   | Yes，如果回应包含刷新信息 |
+| PUT    | 创建或替换资源        | Yes  | No   | No             |
+| PATCH  | 部分更新资源         | No   | No   | Yes，如果回应包含刷新信息 |
+| DELETE | 删除资源           | Yes  | No   | No             |
 
-*Can be called many times without different outcomes.
 
-HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
 
-#### Source(s) and further reading: HTTP
+**多次执行不会产生不同的结果**。
 
-* [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
-* [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
-* [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
+HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议。
 
-### Transmission control protocol (TCP)
+#### 来源及延伸阅读：HTTP
+
+* [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)    +
+* [HTTP 是什么？](https://www.nginx.com/resources/glossary/http/)
+* [HTTP 和 TCP 的区别](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+* [PUT 和 PATCH的区别](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
+
+### 传输控制协议（TCP）
 
 <p align="center">
   <img src="images/JdAsdvG.jpg">
   <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+  <strong><a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/">资料来源：如何制作多人游戏</a></strong>
 </p>
 
-TCP is a connection-oriented protocol over an [IP network](https://en.wikipedia.org/wiki/Internet_Protocol).  Connection is established and terminated using a [handshake](https://en.wikipedia.org/wiki/Handshaking).  All packets sent are guaranteed to reach the destination in the original order and without corruption through:
+TCP 是通过 [IP 网络](https://en.wikipedia.org/wiki/Internet_Protocol)的面向连接的协议。 使用[握手](https://en.wikipedia.org/wiki/Handshaking)建立和断开连接。 发送的所有数据包保证以原始顺序到达目的地，用以下措施保证数据包不被损坏：
 
-* Sequence numbers and [checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) for each packet
-* [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) packets and automatic retransmission
+- 每个数据包的序列号和[校验码](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)。
+- [确认包](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks))和自动重传
 
-If the sender does not receive a correct response, it will resend the packets.  If there are multiple timeouts, the connection is dropped.  TCP also implements [flow control](https://en.wikipedia.org/wiki/Flow_control_(data)) and [congestion control](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control).  These guarantees cause delays and generally result in less efficient transmission than UDP.
+如果发送者没有收到正确的响应，它将重新发送数据包。如果多次超时，连接就会断开。TCP 实行[流量控制](https://en.wikipedia.org/wiki/Flow_control_(data))和[拥塞控制](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)。这些确保措施会导致延迟，而且通常导致传输效率比 UDP 低。
 
-To ensure high throughput, web servers can keep a large number of TCP connections open, resulting in high memory usage.  It can be expensive to have a large number of open connections between web server threads and say, a [memcached](https://memcached.org/) server.  [Connection pooling](https://en.wikipedia.org/wiki/Connection_pool) can help in addition to switching to UDP where applicable.
+为了确保高吞吐量，Web 服务器可以保持大量的 TCP 连接，从而导致高内存使用。在 Web 服务器线程间拥有大量开放连接可能开销巨大，消耗资源过多，也就是说，一个 [memcached](#memcached) 服务器。[连接池](https://en.wikipedia.org/wiki/Connection_pool) 可以帮助除了在适用的情况下切换到 UDP。
 
-TCP is useful for applications that require high reliability but are less time critical.  Some examples include web servers, database info, SMTP, FTP, and SSH.
+TCP  对于需要高可靠性但时间紧迫的应用程序很有用。比如包括 Web 服务器，数据库信息，SMTP，FTP 和 SSH。
 
-Use TCP over UDP when:
+以下情况使用 TCP 代替 UDP：
 
-* You need all of the data to arrive intact
-* You want to automatically make a best estimate use of the network throughput
+- 你需要数据完好无损。
+- 你想对网络吞吐量自动进行最佳评估。
 
-### User datagram protocol (UDP)
+### 用户数据报协议（UDP）
 
 <p align="center">
   <img src="images/yzDrJtA.jpg">
   <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+  <strong><a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1">资料来源：如何制作多人游戏</a></strong>
 </p>
 
-UDP is connectionless.  Datagrams (analogous to packets) are guaranteed only at the datagram level.  Datagrams might reach their destination out of order or not at all.  UDP does not support congestion control.  Without the guarantees that TCP support, UDP is generally more efficient.
+UDP 是无连接的。数据报（类似于数据包）只在数据报级别有保证。数据报可能会无序的到达目的地，也有可能会遗失。UDP 不支持拥塞控制。虽然不如 TCP 那样有保证，但 UDP 通常效率更高。
 
-UDP can broadcast, sending datagrams to all devices on the subnet.  This is useful with [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) because the client has not yet received an IP address, thus preventing a way for TCP to stream without the IP address.
+UDP 可以通过广播将数据报发送至子网内的所有设备。这对 [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) 很有用，因为子网内的设备还没有分配 IP 地址，而 IP 对于 TCP 是必须的。
 
-UDP is less reliable but works well in real time use cases such as VoIP, video chat, streaming, and realtime multiplayer games.
+UDP 可靠性更低但适合用在网络电话、视频聊天，流媒体和实时多人游戏上。
 
-Use UDP over TCP when:
+以下情况使用 UDP 代替 TCP：
 
-* You need the lowest latency
-* Late data is worse than loss of data
-* You want to implement your own error correction
+* 你需要低延迟
+* 相对于数据丢失更糟的是数据延迟
+* 你想实现自己的错误校正方法
 
-#### Source(s) and further reading: TCP and UDP
+#### 来源及延伸阅读：TCP 与 UDP
 
-* [Networking for game programming](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
-* [Key differences between TCP and UDP protocols](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
-* [Difference between TCP and UDP](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
-* [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
-* [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
-* [Scaling memcache at Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
+* [游戏编程的网络](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
+* [TCP 与 UDP 的关键区别](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
+* [TCP 与 UDP 的不同](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
+* [传输控制协议](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
+* [用户数据报协议](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
+* [Memcache 在 Facebook 的扩展](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
-### Remote procedure call (RPC)
+### 远程过程调用协议（RPC）
 
 <p align="center">
   <img src="images/iF4Mkb5.png">
   <br/>
-  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
+  <strong><a href="http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview">Source: Crack the system design interview</a></strong>
 </p>
 
-In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), and [Avro](https://avro.apache.org/docs/current/).
+在 RPC 中，客户端会去调用另一个地址空间（通常是一个远程服务器）里的方法。调用代码看起来就像是调用的是一个本地方法，客户端和服务器交互的具体过程被抽象。远程调用相对于本地调用一般较慢而且可靠性更差，因此区分两者是有帮助的。热门的 RPC 框架包括 [Protobuf](https://developers.google.com/protocol-buffers/)、[Thrift](https://thrift.apache.org/) 和 [Avro](https://avro.apache.org/docs/current/)。
 
-RPC is a request-response protocol:
+RPC 是一个“请求-响应”协议：
 
-* **Client program** - Calls the client stub procedure.  The parameters are pushed onto the stack like a local procedure call.
-* **Client stub procedure** - Marshals (packs) procedure id and arguments into a request message.
-* **Client communication module** - OS sends the message from the client to the server.
-* **Server communication module** - OS passes the incoming packets to the server stub procedure.
-* **Server stub procedure** -  Unmarshalls the results, calls the server procedure matching the procedure id and passes the given arguments.
-* The server response repeats the steps above in reverse order.
+* **客户端程序** ── 调用客户端存根程序。就像调用本地方法一样，参数会被压入栈中。
+* **客户端 stub 程序** ── 将请求过程的 id 和参数打包进请求信息中。
+* **客户端通信模块** ── 将信息从客户端发送至服务端。
+* **服务端通信模块** ── 将接受的包传给服务端存根程序。
+* **服务端 stub 程序** ── 将结果解包，依据过程 id 调用服务端方法并将参数传递过去。
 
-Sample RPC calls:
+RPC 调用示例：
 
 ```
 GET /someoperation?data=anId
@@ -1483,36 +1409,37 @@ POST /anotheroperation
 }
 ```
 
-RPC is focused on exposing behaviors.  RPCs are often used for performance reasons with internal communications, as you can hand-craft native calls to better fit your use cases.
+RPC 专注于暴露方法。RPC 通常用于处理内部通讯的性能问题，这样你可以手动处理本地调用以更好的适应你的情况。
 
-Choose a native library (aka SDK) when:
 
-* You know your target platform.
-* You want to control how your "logic" is accessed.
-* You want to control how error control happens off your library.
-* Performance and end user experience is your primary concern.
+当以下情况时选择本地库（也就是 SDK）：
 
-HTTP APIs following **REST** tend to be used more often for public APIs.
+* 你知道你的目标平台。
+* 你想控制如何访问你的“逻辑”。
+* 你想对发生在你的库中的错误进行控制。
+* 性能和终端用户体验是你最关心的事。
 
-#### Disadvantage(s): RPC
+遵循 **REST** 的 HTTP API 往往更适用于公共 API。
 
-* RPC clients become tightly coupled to the service implementation.
-* A new API must be defined for every new operation or use case.
-* It can be difficult to debug RPC.
-* You might not be able to leverage existing technologies out of the box.  For example, it might require additional effort to ensure [RPC calls are properly cached](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) on caching servers such as [Squid](http://www.squid-cache.org/).
+#### 缺点：RPC
 
-### Representational state transfer (REST)
+* RPC 客户端与服务实现捆绑地很紧密。
+* 一个新的 API 必须在每一个操作或者用例中定义。
+* RPC 很难调试。
+* 你可能没办法很方便的去修改现有的技术。举个例子，如果你希望在 [Squid](http://www.squid-cache.org/) 这样的缓存服务器上确保 [RPC 被正确缓存](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)的话可能需要一些额外的努力了。
 
-REST is an architectural style enforcing a client/server model where the client acts on a set of resources managed by the server.  The server provides a representation of resources and actions that can either manipulate or get a new representation of resources.  All communication must be stateless and cacheable.
+### 表述性状态转移（REST）
 
-There are four qualities of a RESTful interface:
+REST 是一种强制的客户端/服务端架构设计模型，客户端基于服务端管理的一系列资源操作。服务端提供修改或获取资源的接口。所有的通信必须是无状态和可缓存的。
 
-* **Identify resources (URI in HTTP)** - use the same URI regardless of any operation.
-* **Change with representations (Verbs in HTTP)** - use verbs, headers, and body.
-* **Self-descriptive error message (status response in HTTP)** - Use status codes, don't reinvent the wheel.
-* **[HATEOAS](http://restcookbook.com/Basics/hateoas/) (HTML interface for HTTP)** - your web service should be fully accessible in a browser.
+RESTful 接口有四条规则：
 
-Sample REST calls:
+* **标志资源（HTTP 里的 URI）** ── 无论什么操作都使用同一个 URI。
+* **表示的改变（HTTP 的动作）** ── 使用动作, headers 和 body。
+* **可自我描述的错误信息（HTTP 中的 status code）** ── 使用状态码，不要重新造轮子。
+* **[HATEOAS](http://restcookbook.com/Basics/hateoas/)（HTTP 中的HTML 接口）** ── 你的 web 服务器应该能够通过浏览器访问。
+
+REST 请求的例子：
 
 ```
 GET /someresources/anId
@@ -1521,64 +1448,63 @@ PUT /someresources/anId
 {"anotherdata": "another value"}
 ```
 
-REST is focused on exposing data.  It minimizes the coupling between client/server and is often used for public HTTP APIs.  REST uses a more generic and uniform method of exposing resources through URIs, [representation through headers](https://github.com/for-GET/know-your-http-well/blob/master/headers.md), and actions through verbs such as GET, POST, PUT, DELETE, and PATCH.  Being stateless, REST is great for horizontal scaling and partitioning.
+REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，经常用于公共 HTTP API 接口设计。REST 使用更通常与规范化的方法来通过 URI 暴露资源，[通过 header 来表述](https://github.com/for-GET/know-your-http-well/blob/master/headers.md)并通过 GET、POST、PUT、DELETE 和 PATCH 这些动作来进行操作。因为无状态的特性，REST 易于横向扩展和隔离。
 
-#### Disadvantage(s): REST
+#### 缺点：REST
 
-* With REST being focused on exposing data, it might not be a good fit if resources are not naturally organized or accessed in a simple hierarchy.  For example, returning all updated records from the past hour matching a particular set of events is not easily expressed as a path.  With REST, it is likely to be implemented with a combination of URI path, query parameters, and possibly the request body.
-* REST typically relies on a few verbs (GET, POST, PUT, DELETE, and PATCH) which sometimes doesn't fit your use case.  For example, moving expired documents to the archive folder might not cleanly fit within these verbs.
-* Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable.
-* Over time, more fields might be added to an API response and older clients will receive all new data fields, even those that they do not need, as a result, it bloats the payload size and leads to larger latencies.
+* 由于 REST 将重点放在暴露数据，所以当资源不是自然组织的或者结构复杂的时候它可能无法很好的适应。举个例子，返回过去一小时中与特定事件集匹配的更新记录这种操作就很难表示为路径。使用 REST，可能会使用 URI 路径，查询参数和可能的请求体来实现。
+* REST 一般依赖几个动作（GET、POST、PUT、DELETE 和 PATCH），但有时候仅仅这些没法满足你的需要。举个例子，将过期的文档移动到归档文件夹里去，这样的操作可能没法简单的用上面这几个 verbs 表达。
+* 为了渲染单个页面，获取被嵌套在层级结构中的复杂资源需要客户端，服务器之间多次往返通信。例如，获取博客内容及其关联评论。对于使用不确定网络环境的移动应用来说，这些多次往返通信是非常麻烦的。
+* 随着时间的推移，更多的字段可能会被添加到 API 响应中，较旧的客户端将会接收到所有新的数据字段，即使是那些它们不需要的字段，结果它会增加负载大小并引起更大的延迟。
 
-### RPC and REST calls comparison
+### RPC 与 REST 比较
 
-| Operation | RPC | REST |
-|---|---|---|
-| Signup    | **POST** /signup | **POST** /persons |
-| Resign    | **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
-| Read a person | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
-| Read a person’s items list | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
-| Add an item to a person’s items | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
-| Update an item    | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
-| Delete an item | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
+| 操作          | RPC                                      | REST                                     |
+| ----------- | ---------------------------------------- | ---------------------------------------- |
+| 注册          | **POST** /signup                         | **POST** /persons                        |
+| 注销          | **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234                 |
+| 读取用户信息      | **GET** /readPerson?personid=1234        | **GET** /persons/1234                    |
+| 读取用户物品列表    | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items              |
+| 向用户物品列表添加一项 | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
+| 更新一个物品      | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
+| 删除一个物品      | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456                    |
 
 <p align="center">
-  <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
+  <strong><a href="https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc">资料来源：你真的知道你为什么更喜欢 REST 而不是 RPC 吗</a></strong>
 </p>
 
-#### Source(s) and further reading: REST and RPC
+#### 来源及延伸阅读：REST 与 RPC
 
-* [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
-* [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
+* [你真的知道你为什么更喜欢 REST 而不是 RPC 吗](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
+* [什么时候 RPC 比 REST 更合适？](http://programmers.stackexchange.com/a/181186)
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
-* [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
-* [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+* [揭开 RPC 和 REST 的神秘面纱](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
+* [使用 REST 的缺点是什么](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
+* [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
-* [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
+* [为什么在内部使用 REST 而不是 RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
-## Security
+## 安全
 
-This section could use some updates.  Consider [contributing](#contributing)!
+这一部分需要更多内容。[一起来吧](#贡献)！
 
-Security is a broad topic.  Unless you have considerable experience, a security background, or are applying for a position that requires knowledge of security, you probably won't need to know more than the basics:
+安全是一个宽泛的话题。除非你有相当的经验、安全方面背景或者正在申请的职位要求安全知识，你不需要了解安全基础知识以外的内容：
 
-* Encrypt in transit and at rest.
-* Sanitize all user inputs or any input parameters exposed to user to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) and [SQL injection](https://en.wikipedia.org/wiki/SQL_injection).
-* Use parameterized queries to prevent SQL injection.
-* Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
+* 在运输和等待过程中加密
+* 对所有的用户输入和从用户那里发来的参数进行处理以防止 [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) 和 [SQL 注入](https://en.wikipedia.org/wiki/SQL_injection)。
+* 使用参数化的查询来防止 SQL 注入。
+* 使用[最小权限原则](https://en.wikipedia.org/wiki/Principle_of_least_privilege)。
 
-### Source(s) and further reading
+### 来源及延伸阅读
 
-* [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
-* [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
+* [为开发者准备的安全引导](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
-## Appendix
+## 附录
 
-You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The **Powers of two table** and **Latency numbers every programmer should know** are handy references.
+一些时候你会被要求做出保守估计。比如，你可能需要估计从磁盘中生成 100 张图片的缩略图需要的时间或者一个数据结构需要多少的内存。**2 的次方表**和**每个开发者都需要知道的一些时间数据**（译注：OSChina 上有这篇文章的[译文](https://www.oschina.net/news/30009/every-programmer-should-know)）都是一些很方便的参考资料。
 
-### Powers of two table
+### 2 的次方表
 
 ```
 Power           Exact Value         Approx Value        Bytes
@@ -1593,11 +1519,11 @@ Power           Exact Value         Approx Value        Bytes
 40              1,099,511,627,776   1 trillion           1 TB
 ```
 
-#### Source(s) and further reading
+#### 来源及延伸阅读
 
-* [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
+* [2 的次方](https://en.wikipedia.org/wiki/Power_of_two)
 
-### Latency numbers every programmer should know
+### 每个程序员都应该知道的延迟数
 
 ```
 Latency Comparison Numbers
@@ -1613,9 +1539,9 @@ Read 4 KB randomly from SSD*           150,000   ns      150 us          ~1GB/se
 Read 1 MB sequentially from memory     250,000   ns      250 us
 Round trip within same datacenter      500,000   ns      500 us
 Read 1 MB sequentially from SSD*     1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X memory
-HDD seek                            10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
+Disk seek                           10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
 Read 1 MB sequentially from 1 Gbps  10,000,000   ns   10,000 us   10 ms  40x memory, 10X SSD
-Read 1 MB sequentially from HDD     30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
+Read 1 MB sequentially from disk    30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
 Send packet CA->Netherlands->CA    150,000,000   ns  150,000 us  150 ms
 
 Notes
@@ -1625,139 +1551,136 @@ Notes
 1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
 ```
 
-Handy metrics based on numbers above:
+基于上述数字的指标：
+* 从磁盘以 30 MB/s 的速度顺序读取
+* 以 100 MB/s 从 1 Gbps 的以太网顺序读取
+* 从 SSD 以 1 GB/s 的速度读取
+* 以 4 GB/s 的速度从主存读取
+* 每秒能绕地球 6-7 圈
+* 数据中心内每秒有 2,000 次往返
 
-* Read sequentially from HDD at 30 MB/s
-* Read sequentially from 1 Gbps Ethernet at 100 MB/s
-* Read sequentially from SSD at 1 GB/s
-* Read sequentially from main memory at 4 GB/s
-* 6-7 world-wide round trips per second
-* 2,000 round trips per second within a data center
-
-#### Latency numbers visualized
+#### 延迟数可视化
 
 ![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
 
-#### Source(s) and further reading
+#### 来源及延伸阅读
 
-* [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
-* [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
-* [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
-* [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
+* [每个程序员都应该知道的延迟数 — 1](https://gist.github.com/jboner/2841832)
+* [每个程序员都应该知道的延迟数 — 2](https://gist.github.com/hellerbarde/2843375)
+* [关于建设大型分布式系统的的设计方案、课程和建议](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
+* [关于建设大型可拓展分布式系统的软件工程咨询](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
-### Additional system design interview questions
+### 其它的系统设计面试题
 
-> Common system design interview questions, with links to resources on how to solve each.
+> 常见的系统设计面试问题，给出了如何解决的方案链接
 
-| Question | Reference(s) |
-|---|---|
-| Design a file sync service like Dropbox | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| Design a search engine like Google | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
-| Design a scalable web crawler like Google | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
-| Design Google docs | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
-| Design a key-value store like Redis | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
-| Design a cache system like Memcached | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
-| Design a recommendation system like Amazon's | [hulu.com](https://web.archive.org/web/20170406065247/http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
-| Design a tinyurl system like Bitly | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
-| Design a chat app like WhatsApp | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
-| Design a picture sharing system like Instagram | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
-| Design the Facebook news feed function | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
-| Design the Facebook timeline function | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
-| Design the Facebook chat function | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
-| Design a graph search function like Facebook's | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
-| Design a content delivery network like CloudFlare | [figshare.com](https://figshare.com/articles/Globally_distributed_content_delivery/6605972) |
-| Design a trending topic system like Twitter's | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
-| Design a random ID generation system | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
-| Return the top k requests during a time interval | [cs.ucsb.edu](https://www.cs.ucsb.edu/sites/default/files/documents/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
-| Design a system that serves data from multiple data centers | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
-| Design an online multiplayer card game | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
-| Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
-| Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
-| Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implementation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
-| Add a system design question | [Contribute](#contributing) |
+| 问题                      | 引用                                       |
+| ----------------------- | ---------------------------------------- |
+| 设计类似于 Dropbox 的文件同步服务   | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
+| 设计类似于 Google 的搜索引擎      | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| 设计类似于 Google 的可扩展网络爬虫   | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
+| 设计 Google 文档            | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
+| 设计类似 Redis 的键值存储        | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+| 设计类似 Memcached 的缓存系统    | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
+| 设计类似亚马逊的推荐系统            | [hulu.com](http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
+| 设计类似 Bitly 的短链接系统       | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
+| 设计类似 WhatsApp 的聊天应用     | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
+| 设计类似 Instagram 的图片分享系统  | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
+| 设计 Facebook 的新闻推荐方法     | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
+| 设计 Facebook 的时间线系统      | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
+| 设计 Facebook 的聊天系统       | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
+| 设计类似 Facebook 的图表搜索系统   | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
+| 设计类似 CloudFlare 的内容传递网络 | [cmu.edu](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci) |
+| 设计类似 Twitter 的热门话题系统    | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
+| 设计一个随机 ID 生成系统          | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
+| 返回一定时间段内次数前 k 高的请求      | [ucsb.edu](https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
+| 设计一个数据源于多个数据中心的服务系统     | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
+| 设计一个多人网络卡牌游戏            | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
+| 设计一个垃圾回收系统              | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
+| 添加更多的系统设计问题             | [贡献](#贡献)              |
 
-### Real world architectures
+### 真实架构
 
-> Articles on how real world systems are designed.
+> 关于现实中真实的系统是怎么设计的文章。
 
 <p align="center">
   <img src="images/TcUo2fw.png">
   <br/>
-  <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
+  <strong><a href="https://www.infoq.com/presentations/Twitter-Timeline-Scalability">Source: Twitter timelines at scale</a></strong>
 </p>
 
-**Don't focus on nitty gritty details for the following articles, instead:**
+**不要专注于以下文章的细节，专注于以下方面：**
 
-* Identify shared principles, common technologies, and patterns within these articles
-* Study what problems are solved by each component, where it works, where it doesn't
-* Review the lessons learned
+* 发现这些文章中的共同的原则、技术和模式。
+* 学习每个组件解决哪些问题，什么情况下使用，什么情况下不适用
+* 复习学过的文章
 
-|Type | System | Reference(s) |
-|---|---|---|
-| Data processing | **MapReduce** - Distributed data processing from Google | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf) |
-| Data processing | **Spark** - Distributed data processing from Databricks | [slideshare.net](http://www.slideshare.net/AGrishchenko/apache-spark-architecture) |
-| Data processing | **Storm** - Distributed data processing from Twitter | [slideshare.net](http://www.slideshare.net/previa/storm-16094009) |
-| | | |
-| Data store | **Bigtable** - Distributed column-oriented database from Google | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) |
-| Data store | **HBase** - Open source implementation of Bigtable | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase) |
-| Data store | **Cassandra** - Distributed column-oriented database from Facebook | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666)
-| Data store | **DynamoDB** - Document-oriented database from Amazon | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) |
-| Data store | **MongoDB** - Document-oriented database | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb) |
-| Data store | **Spanner** - Globally-distributed database from Google | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf) |
-| Data store | **Memcached** - Distributed memory caching system | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
-| Data store | **Redis** - Distributed memory caching system with persistence and value types | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
-| | | |
-| File system | **Google File System (GFS)** - Distributed file system | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
-| File system | **Hadoop File System (HDFS)** - Open source implementation of GFS | [apache.org](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html) |
-| | | |
-| Misc | **Chubby** - Lock service for loosely-coupled distributed systems from Google | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
-| Misc | **Dapper** - Distributed systems tracing infrastructure | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
-| Misc | **Kafka** - Pub/sub message queue from LinkedIn | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
-| Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
-| | Add an architecture | [Contribute](#contributing) |
+| 类型              | 系统                                       | 引用                                       |
+| --------------- | ---------------------------------------- | ---------------------------------------- |
+| Data processing | **MapReduce** - Google的分布式数据处理 | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf) |
+| Data processing | **Spark** - Databricks 的分布式数据处理 | [slideshare.net](http://www.slideshare.net/AGrishchenko/apache-spark-architecture) |
+| Data processing | **Storm** - Twitter 的分布式数据处理 | [slideshare.net](http://www.slideshare.net/previa/storm-16094009) |
+|                 |                                          |                                          |
+| Data store      | **Bigtable** - Google 的列式数据库 | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) |
+| Data store      | **HBase** - Bigtable 的开源实现 | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase) |
+| Data store      | **Cassandra** - Facebook 的列式数据库 | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666) |
+| Data store      | **DynamoDB** - Amazon 的文档数据库 | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) |
+| Data store      | **MongoDB** - 文档数据库 | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb) |
+| Data store      | **Spanner** - Google 的全球分布数据库 | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf) |
+| Data store      | **Memcached** - 分布式内存缓存系统 | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
+| Data store      | **Redis** - 能够持久化及具有值类型的分布式内存缓存系统 | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+|                 |                                          |                                          |
+| File system     | **Google File System (GFS)** - 分布式文件系统 | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
+| File system     | **Hadoop File System (HDFS)** - GFS 的开源实现 | [apache.org](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) |
+|                 |                                          |                                          |
+| Misc            | **Chubby** - Google 的分布式系统的低耦合锁服务 | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
+| Misc            | **Dapper** - 分布式系统跟踪基础设施 | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf) |
+| Misc            | **Kafka** - LinkedIn 的发布订阅消息系统 | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
+| Misc            | **Zookeeper** - 集中的基础架构和协调服务 | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
+|                 | 添加更多                      | [贡献](#贡献)              |
 
-### Company architectures
+### 公司的系统架构
 
-| Company | Reference(s) |
-|---|---|
-| Amazon | [Amazon architecture](http://highscalability.com/amazon-architecture) |
-| Cinchcast | [Producing 1,500 hours of audio every day](http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html) |
-| DataSift | [Realtime datamining At 120,000 tweets per second](http://highscalability.com/blog/2011/11/29/datasift-architecture-realtime-datamining-at-120000-tweets-p.html) |
-| Dropbox | [How we've scaled Dropbox](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| ESPN | [Operating At 100,000 duh nuh nuhs per second](http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html) |
-| Google | [Google architecture](http://highscalability.com/google-architecture) |
-| Instagram | [14 million users, terabytes of photos](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html)<br/>[What powers Instagram](http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances) |
-| Justin.tv | [Justin.Tv's live video broadcasting architecture](http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html) |
-| Facebook | [Scaling memcached at Facebook](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/key-value/fb-memcached-nsdi-2013.pdf)<br/>[TAO: Facebook’s distributed data store for the social graph](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf)<br/>[Facebook’s photo storage](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf)<br/>[How Facebook Live Streams To 800,000 Simultaneous Viewers](http://highscalability.com/blog/2016/6/27/how-facebook-live-streams-to-800000-simultaneous-viewers.html) |
-| Flickr | [Flickr architecture](http://highscalability.com/flickr-architecture) |
-| Mailbox | [From 0 to one million users in 6 weeks](http://highscalability.com/blog/2013/6/18/scaling-mailbox-from-0-to-one-million-users-in-6-weeks-and-1.html) |
-| Netflix | [A 360 Degree View Of The Entire Netflix Stack](http://highscalability.com/blog/2015/11/9/a-360-degree-view-of-the-entire-netflix-stack.html)<br/>[Netflix: What Happens When You Press Play?](http://highscalability.com/blog/2017/12/11/netflix-what-happens-when-you-press-play.html) |
-| Pinterest | [From 0 To 10s of billions of page views a month](http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html)<br/>[18 million visitors, 10x growth, 12 employees](http://highscalability.com/blog/2012/5/21/pinterest-architecture-update-18-million-visitors-10x-growth.html) |
-| Playfish | [50 million monthly users and growing](http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html) |
-| PlentyOfFish | [PlentyOfFish architecture](http://highscalability.com/plentyoffish-architecture) |
-| Salesforce | [How they handle 1.3 billion transactions a day](http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html) |
-| Stack Overflow | [Stack Overflow architecture](http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html) |
-| TripAdvisor | [40M visitors, 200M dynamic page views, 30TB data](http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html) |
-| Tumblr | [15 billion page views a month](http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html) |
-| Twitter | [Making Twitter 10000 percent faster](http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster)<br/>[Storing 250 million tweets a day using MySQL](http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html)<br/>[150M active users, 300K QPS, a 22 MB/S firehose](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html)<br/>[Timelines at scale](https://www.infoq.com/presentations/Twitter-Timeline-Scalability)<br/>[Big and small data at Twitter](https://www.youtube.com/watch?v=5cKTP36HVgI)<br/>[Operations at Twitter: scaling beyond 100 million users](https://www.youtube.com/watch?v=z8LU0Cj6BOU)<br/>[How Twitter Handles 3,000 Images Per Second](http://highscalability.com/blog/2016/4/20/how-twitter-handles-3000-images-per-second.html) |
-| Uber | [How Uber scales their real-time market platform](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html)<br/>[Lessons Learned From Scaling Uber To 2000 Engineers, 1000 Services, And 8000 Git Repositories](http://highscalability.com/blog/2016/10/12/lessons-learned-from-scaling-uber-to-2000-engineers-1000-ser.html) |
-| WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
-| YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
+| Company        | Reference(s)                             |
+| -------------- | ---------------------------------------- |
+| Amazon         | [Amazon 的架构](http://highscalability.com/amazon-architecture) |
+| Cinchcast      | [每天产生 1500 小时的音频](http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html) |
+| DataSift       | [每秒实时挖掘 120000 条 tweet](http://highscalability.com/blog/2011/11/29/datasift-architecture-realtime-datamining-at-120000-tweets-p.html) |
+| DropBox        | [我们如何缩放 Dropbox](https://www.youtube.com/watch?v=PE4gwstWhmc) |
+| ESPN           | [每秒操作 100000 次](http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html) |
+| Google         | [Google 的架构](http://highscalability.com/google-architecture) |
+| Instagram      | [1400 万用户，达到兆级别的照片存储](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html)<br/>[是什么在驱动 Instagram](http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances) |
+| Justin.tv      | [Justin.Tv 的直播广播架构](http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html) |
+| Facebook       | [Facebook 的可扩展 memcached](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/key-value/fb-memcached-nsdi-2013.pdf)<br/>[TAO: Facebook 社交图的分布式数据存储](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf)<br/>[Facebook 的图片存储](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf) |
+| Flickr         | [Flickr 的架构](http://highscalability.com/flickr-architecture) |
+| Mailbox        | [在 6 周内从 0 到 100 万用户](http://highscalability.com/blog/2013/6/18/scaling-mailbox-from-0-to-one-million-users-in-6-weeks-and-1.html) |
+| Pinterest      | [从零到每月数十亿的浏览量](http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html)<br/>[1800 万访问用户，10 倍增长，12 名员工](http://highscalability.com/blog/2012/5/21/pinterest-architecture-update-18-million-visitors-10x-growth.html) |
+| Playfish       | [月用户量 5000 万并在不断增长](http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html) |
+| PlentyOfFish   | [PlentyOfFish 的架构](http://highscalability.com/plentyoffish-architecture) |
+| Salesforce     | [他们每天如何处理 13 亿笔交易](http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html) |
+| Stack Overflow | [Stack Overflow 的架构](http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html) |
+| TripAdvisor    | [40M 访问者，200M 页面浏览量，30TB 数据](http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html) |
+| Tumblr         | [每月 150 亿的浏览量](http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html) |
+| Twitter        | [Making Twitter 10000 percent faster](http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster)<br/>[每天使用 MySQL 存储2.5亿条 tweet](http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html)<br/>[150M 活跃用户，300K QPS，22 MB/S 的防火墙](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html)<br/>[可扩展时间表](https://www.infoq.com/presentations/Twitter-Timeline-Scalability)<br/>[Twitter 的大小数据](https://www.youtube.com/watch?v=5cKTP36HVgI)<br/>[Twitter 的行为：规模超过 1 亿用户](https://www.youtube.com/watch?v=z8LU0Cj6BOU) |
+| Uber           | [Uber 如何扩展自己的实时化市场](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html) |
+| WhatsApp       | [Facebook 用 190 亿美元购买 WhatsApp 的架构](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
+| YouTube        | [YouTube 的可扩展性](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube 的架构](http://highscalability.com/youtube-architecture) |
 
-### Company engineering blogs
+### 公司工程博客
 
-> Architectures for companies you are interviewing with.
+> 你即将面试的公司的架构
 >
-> Questions you encounter might be from the same domain.
+> 你面对的问题可能就来自于同样领域
 
 * [Airbnb Engineering](http://nerds.airbnb.com/)
 * [Atlassian Developers](https://developer.atlassian.com/blog/)
+* [Autodesk Engineering](http://cloudengineering.autodesk.com/blog/)
 * [AWS Blog](https://aws.amazon.com/blogs/aws/)
 * [Bitly Engineering Blog](http://word.bitly.com/)
-* [Box Blogs](https://blog.box.com/blog/category/engineering)
-* [Cloudera Developer Blog](http://blog.cloudera.com/)
+* [Box Blogs](https://www.box.com/blog/engineering/)
+* [Cloudera Developer Blog](http://blog.cloudera.com/blog/)
 * [Dropbox Tech Blog](https://tech.dropbox.com/)
-* [Engineering at Quora](https://www.quora.com/q/quoraengineering)
+* [Engineering at Quora](http://engineering.quora.com/)
 * [Ebay Tech Blog](http://www.ebaytechblog.com/)
 * [Evernote Tech Blog](https://blog.evernote.com/tech/)
 * [Etsy Code as Craft](http://codeascraft.com/)
@@ -1777,39 +1700,38 @@ Handy metrics based on numbers above:
 * [Microsoft Engineering](https://engineering.microsoft.com/)
 * [Microsoft Python Engineering](https://blogs.msdn.microsoft.com/pythonengineering/)
 * [Netflix Tech Blog](http://techblog.netflix.com/)
-* [Paypal Developer Blog](https://medium.com/paypal-engineering)
-* [Pinterest Engineering Blog](https://medium.com/@Pinterest_Engineering)
+* [Paypal Developer Blog](https://devblog.paypal.com/category/engineering/)
+* [Pinterest Engineering Blog](http://engineering.pinterest.com/)
+* [Quora Engineering](https://engineering.quora.com/)
 * [Reddit Blog](http://www.redditblog.com/)
 * [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/)
 * [Slack Engineering Blog](https://slack.engineering/)
 * [Spotify Labs](https://labs.spotify.com/)
 * [Twilio Engineering Blog](http://www.twilio.com/engineering)
-* [Twitter Engineering](https://blog.twitter.com/engineering/)
+* [Twitter Engineering](https://engineering.twitter.com/)
 * [Uber Engineering Blog](http://eng.uber.com/)
 * [Yahoo Engineering Blog](http://yahooeng.tumblr.com/)
 * [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
 * [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
 
-#### Source(s) and further reading
-
-Looking to add a blog?  To avoid duplicating work, consider adding your company blog to the following repo:
+#### 来源及延伸阅读
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
-## Under development
+## 正在完善中
 
-Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
+有兴趣加入添加一些部分或者帮助完善某些部分吗？[加入进来吧](#贡献)！
 
-* Distributed computing with MapReduce
-* Consistent hashing
-* Scatter gather
-* [Contribute](#contributing)
+* 使用 MapReduce 进行分布式计算
+* 一致性哈希
+* 直接存储器访问（DMA）控制器
+* [贡献](#贡献)
 
-## Credits
+## 致谢
 
-Credits and sources are provided throughout this repo.
+整个仓库都提供了证书和源
 
-Special thanks to:
+特别鸣谢：
 
 * [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/)
 * [Cracking the coding interview](https://www.amazon.com/dp/0984782850/)
@@ -1821,17 +1743,13 @@ Special thanks to:
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
 * [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
-## Contact info
+## 联系方式
 
-Feel free to contact me to discuss any issues, questions, or comments.
+欢迎联系我讨论本文的不足、问题或者意见。
 
-My contact info can be found on my [GitHub page](https://github.com/donnemartin).
+可以在我的 [GitHub 主页](https://github.com/donnemartin)上找到我的联系方式
 
-## License
-
-*I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
-
-    Copyright 2017 Donne Martin
+## 许可
 
     Creative Commons Attribution 4.0 International License (CC BY 4.0)
 

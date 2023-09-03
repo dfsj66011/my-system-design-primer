@@ -28,7 +28,7 @@ Languages are grouped by status and are listed in alphabetical order.
 
 ### 🎉 Simplified Chinese
 
-* [zh-Hans.md](README-zh-Hans.md)
+* [zh-Hans.md](README.md)
 * Maintainer(s): [@sqrthree](https://github.com/sqrthree) 👏
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/38
 
